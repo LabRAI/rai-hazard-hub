@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jura" />
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+		<script>
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker
+					.getRegistrations()
+					.then((registrations) =>
+						registrations.forEach((registration) => registration.unregister())
+					)
+					.catch(() => {});
+				if ('caches' in window) {
+					caches
+						.keys()
+						.then((keys) => keys.forEach((key) => caches.delete(key)))
+						.catch(() => {});
+				}
+			}
+		</script>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover" style="margin: 0%; height: 100dvh; width: 100dvw">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
