@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VITE_PAGE_VIEW_API_BASE: ${{ vars.PAGE_VIEW_API_BASE }}
+      BASE_PATH: /${{ github.event.repository.name }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

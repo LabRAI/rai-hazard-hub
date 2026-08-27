@@ -4,6 +4,7 @@
 	import fireeyeImage from '$lib/assets/portal/fireeye.png';
 	import pyhazardsImage from '$lib/assets/portal/pyhazards.png';
 	import researchNotesImage from '$lib/assets/portal/research-notes.png';
+	import { withBase } from '$lib/paths';
 	import {
 		ArrowRightOutline,
 		ArrowUpRightFromSquareOutline,
@@ -43,7 +44,7 @@
 			kicker: 'Paper blog',
 			description:
 				'Readable paper notes on wildfire data, model evaluation, public benchmarks, and field use.',
-			href: '/research-notes/',
+			href: withBase('/research-notes/'),
 			action: 'Read notes',
 			accent: 'green',
 			image: researchNotesImage,
@@ -97,7 +98,7 @@
 	];
 
 	const footerLinks: FooterLink[] = [
-		{ label: 'Research Notes', href: '/research-notes/' },
+		{ label: 'Research Notes', href: withBase('/research-notes/') },
 		{ label: 'RAI FireEye', href: 'https://rai-fire.com/', external: true },
 		{ label: 'PyHazards', href: 'https://labrai.github.io/PyHazards/', external: true },
 		{ label: 'Lab GitHub', href: 'https://github.com/LabRAI', external: true }
@@ -114,13 +115,13 @@
 
 <main class="portal-page">
 	<header class="portal-header">
-		<a class="brand" href="/" aria-label="Open RAI FireEye">
+		<a class="brand" href={withBase('/')} aria-label="Open RAI FireEye">
 			<img src={favicon} alt="RAI Lab" />
 			<span>RAI Hazard Intelligence</span>
 		</a>
 
 		<nav class="portal-nav" aria-label="Primary links">
-			<a href="/research-notes/">Notes</a>
+			<a href={withBase('/research-notes/')}>Notes</a>
 			<a href="https://rai-fire.com/">FireEye</a>
 			<a href="https://labrai.github.io/PyHazards/">PyHazards</a>
 		</nav>

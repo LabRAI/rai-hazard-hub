@@ -14,6 +14,7 @@
 	import wildfireFmMatching from '$lib/assets/researchNotes/wildfire-fm-matching.png';
 	import wildfireIaCard from '$lib/assets/researchNotes/wildfire-ia-card.png';
 	import wildfireIaSources from '$lib/assets/researchNotes/wildfire-ia-sources.png';
+	import { withBase } from '$lib/paths';
 	import {
 		ArrowLeftOutline,
 		ArrowRightOutline,
@@ -168,13 +169,13 @@
 
 <main class="notes-page">
 	<header class="notes-header">
-		<a class="brand" href="/" aria-label="Back to portal">
+		<a class="brand" href={withBase('/')} aria-label="Back to portal">
 			<img src={favicon} alt="RAI Lab" />
 			<span>RAI Hazard Intelligence</span>
 		</a>
 
 		<nav class="notes-nav" aria-label="Research notes links">
-			<a href="/"><ArrowLeftOutline class="nav-icon" /> Portal</a>
+			<a href={withBase('/')}><ArrowLeftOutline class="nav-icon" /> Portal</a>
 			<a href="https://rai-fire.com/">FireEye</a>
 			<a href="https://labrai.github.io/PyHazards/">PyHazards</a>
 		</nav>
@@ -293,7 +294,7 @@
 						supporting environmental layers kept as quick visual cues for skimming.
 					</p>
 				</div>
-				<a href="/">
+				<a href={withBase('/')}>
 					Back to hub
 					<ArrowRightOutline class="inline-icon" />
 				</a>

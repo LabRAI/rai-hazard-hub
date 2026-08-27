@@ -1,6 +1,10 @@
 # RAI Hazard Intelligence Hub
 
-Static site for the LabRAI org:
+Static site for the LabRAI org.
+
+Live URL:
+
+`https://labrai.github.io/rai-hazard-hub/`
 
 - `/` portal
 - `/research-notes/` paper notes
@@ -15,6 +19,7 @@ npm run dev
 ## Deployment
 
 This repo is meant for GitHub Pages.
+The GitHub Pages project path is `https://labrai.github.io/rai-hazard-hub/`.
 
 ## Optional page-view API
 
