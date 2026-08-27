@@ -7,7 +7,7 @@ Live URL:
 `https://labrai.github.io/rai-hazard-hub/`
 
 - `/` portal
-- `/research-notes/` paper notes
+- `/research-notes/` research notes
 
 ## Local dev
 
@@ -30,14 +30,15 @@ Set `VITE_PAGE_VIEW_API_BASE` to enable the visitor map on the portal.
 ### This repo
 
 - Static pages and content
-- Research Notes blog
+- Research Notes page
 - Portal navigation
 - GitHub Pages deployment
 
-### Self-hosted server
+### Server-side services
 
 - FireEye / wildfire risk map
 - Page-view tracking and geocoded visitor summaries
 - Any backend that needs raw request IPs
 
-The static site should never expose raw IP addresses.
+These services run outside GitHub Pages because they require server-side processing. The
+static site should never expose raw IP addresses.

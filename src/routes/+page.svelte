@@ -41,15 +41,15 @@
 	const entries: PortalEntry[] = [
 		{
 			title: 'Research Notes',
-			kicker: 'Paper blog',
+			kicker: 'Research briefs',
 			description:
-				'Readable paper notes on wildfire data, model evaluation, public benchmarks, and field use.',
+				'Concise summaries of wildfire studies, benchmark design, data sources, and field implications.',
 			href: withBase('/research-notes/'),
 			action: 'Read notes',
 			accent: 'green',
 			image: researchNotesImage,
 			icon: BookOpenOutline,
-			items: ['Paper summaries', 'Visual explainers', 'Source links']
+			items: ['Study summaries', 'Data context', 'Paper links']
 		},
 		{
 			title: 'RAI FireEye',
@@ -68,7 +68,7 @@
 			title: 'PyHazards',
 			kicker: 'Lab documentation',
 			description:
-				'Go to the RAI Lab documentation for hazard datasets, model adapters, and Python workflows.',
+				'RAI Lab documentation for hazard datasets, model adapters, and Python workflows.',
 			href: 'https://labrai.github.io/PyHazards/',
 			action: 'Open docs',
 			external: true,
@@ -83,7 +83,7 @@
 		{
 			title: 'RAI Lab',
 			kicker: 'Research home',
-			text: 'Wildfire and hazard AI research, benchmark design, geospatial engineering, and public-facing tool development.'
+			text: 'Wildfire and hazard intelligence research, benchmark design, geospatial engineering, and public-facing tools.'
 		},
 		{
 			title: 'Paper Authors',
@@ -93,14 +93,18 @@
 		{
 			title: 'Open Resources',
 			kicker: 'Data and tools',
-			text: 'FireEye, PyHazards, arXiv papers, and public environmental layers for weather, fuel, fire activity, and exposure.'
+			text: 'FireEye, PyHazards, public manuscripts, and environmental layers for weather, fuel, fire activity, and exposure.'
 		}
 	];
 
 	const footerLinks: FooterLink[] = [
 		{ label: 'Research Notes', href: withBase('/research-notes/') },
 		{ label: 'RAI FireEye', href: 'https://rai-fire.com/', external: true },
-		{ label: 'PyHazards', href: 'https://labrai.github.io/PyHazards/', external: true },
+		{
+			label: 'PyHazards',
+			href: 'https://labrai.github.io/PyHazards/',
+			external: true
+		},
 		{ label: 'Lab GitHub', href: 'https://github.com/LabRAI', external: true }
 	];
 </script>
@@ -109,13 +113,13 @@
 	<title>RAI Hazard Intelligence Hub</title>
 	<meta
 		name="description"
-		content="A three-part portal for research notes, RAI FireEye, and PyHazards documentation."
+		content="A central portal for RAI research notes, FireEye wildfire intelligence, and PyHazards documentation."
 	/>
 </svelte:head>
 
 <main class="portal-page">
 	<header class="portal-header">
-		<a class="brand" href={withBase('/')} aria-label="Open RAI FireEye">
+		<a class="brand" href={withBase('/')} aria-label="Open RAI Hazard Intelligence Hub">
 			<img src={favicon} alt="RAI Lab" />
 			<span>RAI Hazard Intelligence</span>
 		</a>
@@ -131,10 +135,7 @@
 		<div class="portal-copy">
 			<p class="eyebrow">Wildfire and multi-hazard AI resources</p>
 			<h1 id="portal-title">RAI Hazard Intelligence Hub</h1>
-			<p>
-				One quiet front door for readable paper notes, the FireEye map, and the PyHazards lab
-				documentation.
-			</p>
+			<p>A central portal for research notes, the FireEye map, and PyHazards documentation.</p>
 		</div>
 	</section>
 
@@ -175,10 +176,10 @@
 			<div class="contributors-copy">
 				<div class="section-heading">
 					<p class="eyebrow">Contributors</p>
-					<h2 id="contributors-title">People, Papers, and Open Tools</h2>
+					<h2 id="contributors-title">People, Research, and Open Resources</h2>
 					<p>
-						This hub ties together RAI Lab research notes, live wildfire intelligence, and reusable
-						hazard AI documentation.
+						RAI Lab maintains the research notes, wildfire intelligence tools, and documentation
+						linked from this portal.
 					</p>
 				</div>
 

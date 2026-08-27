@@ -44,8 +44,8 @@
 		category: string;
 		authors: string;
 		pdfHref: string;
-		artifactHref: string;
-		artifactLabel: string;
+		resourceHref: string;
+		resourceLabel: string;
 		theme: 'red' | 'blue';
 		image: string;
 		imageAlt: string;
@@ -66,8 +66,8 @@
 			category: 'Foundation model',
 			authors: 'Yangshuang Xu, Yuyang Dai, Liling Chang, Qi Wang, Yushun Dong',
 			pdfHref: 'https://arxiv.org/pdf/2605.18911',
-			artifactHref: 'https://huggingface.co/RAI-Lab/Wildfire-FM',
-			artifactLabel: 'Model assets',
+			resourceHref: 'https://huggingface.co/RAI-Lab/Wildfire-FM',
+			resourceLabel: 'Model release',
 			theme: 'red',
 			image: wildfireFmCard,
 			imageAlt:
@@ -75,9 +75,9 @@
 			detailImage: wildfireFmMatching,
 			detailLabel: 'Matching rules',
 			summary:
-				'This paper introduces Wildfire-FM, a wildfire-specific foundation model trained with weather, active-fire observations, topography, vegetation, and static environmental data. The blog story is really about trust: evaluation choices can make a model look useful, fragile, or misleading unless the task contract is fixed up front.',
+				'Wildfire-FM is a wildfire-specific foundation model trained with weather, active-fire observations, topography, vegetation, and static environmental data. The study focuses on model evaluation as much as model design: transfer results can look different when matching rules, scoring thresholds, or output contracts change.',
 			question:
-				'When a wildfire model scores well, is it learning the fire problem, or benefiting from the way we matched, scored, and selected the prediction?',
+				'When a wildfire model scores well, how much of that performance comes from learned fire behavior, and how much comes from the evaluation contract?',
 			takeaways: [
 				'Wildfire transfer results change when matching rules change, even when the output is held fixed.',
 				'Head-selection metrics can reward ranking quality while missing the decision threshold that operators care about.',
@@ -99,8 +99,8 @@
 			category: 'Benchmark',
 			authors: 'Runyang Xu, Xueqi Cheng, Yushun Dong',
 			pdfHref: 'https://arxiv.org/pdf/2606.15529',
-			artifactHref: 'https://github.com/LabRAI/WildfireIA',
-			artifactLabel: 'Code and cache',
+			resourceHref: 'https://github.com/LabRAI/WildfireIA',
+			resourceLabel: 'Project repository',
 			theme: 'blue',
 			image: wildfireIaCard,
 			imageAlt:
@@ -108,7 +108,7 @@
 			detailImage: wildfireIaSources,
 			detailLabel: 'Source alignment',
 			summary:
-				'This paper turns initial attack failure into a reproducible national benchmark. It aligns 38,128 naturally caused FPA-FOD events with public discovery-time signals from FIRMS/VIIRS, gridMET, LANDFIRE, OpenStreetMap, and WorldPop, while excluding outcome-derived clues that would leak the answer.',
+				'This study defines initial attack failure prediction as a reproducible national benchmark. It aligns 38,128 naturally caused FPA-FOD events with public discovery-time signals from FIRMS/VIIRS, gridMET, LANDFIRE, OpenStreetMap, and WorldPop, while excluding outcome-derived clues that would leak the answer.',
 			question:
 				'How far can public information available at discovery time go in flagging fires that may escape early control?',
 			takeaways: [
@@ -127,43 +127,43 @@
 
 	const gallery = [
 		{
-			title: 'Weather before ignition',
+			title: 'Pre-ignition weather',
 			image: drought,
-			text: 'Recent weather and fire-danger context without turning the page into a formula sheet.'
+			text: 'Recent drought and fire-danger signals frame the conditions surrounding a reported event.'
 		},
 		{
 			title: 'Fuel and vegetation',
 			image: landcover,
-			text: 'Static landscape signals that help explain why two events can diverge quickly.'
+			text: 'Land cover and vegetation structure help explain why similar ignitions can develop differently.'
 		},
 		{
 			title: 'Active-fire evidence',
 			image: fireIntensity,
-			text: 'Thermal detections as useful evidence, not the whole benchmark definition.'
+			text: 'Thermal detections provide early observational evidence while preserving the benchmark label.'
 		},
 		{
 			title: 'Community exposure',
 			image: wui,
-			text: 'A bridge from model output to planning questions about people and built areas.'
+			text: 'Wildland-urban interface layers connect model outputs to people, structures, and response priorities.'
 		},
 		{
 			title: 'Canopy structure',
 			image: canopy,
-			text: 'A readable visual cue for fuel continuity and environmental context.'
+			text: 'Canopy information adds local context for fuel continuity and potential fire spread.'
 		},
 		{
 			title: 'Carbon and recovery',
 			image: forestCarbon,
-			text: 'Longer-horizon questions that sit beside immediate prediction work.'
+			text: 'Forest carbon layers support longer-horizon analysis beyond immediate incident prediction.'
 		}
 	];
 </script>
 
 <svelte:head>
-	<title>Paper Notes | RAI Hazard Intelligence</title>
+	<title>Research Notes | RAI Hazard Intelligence</title>
 	<meta
 		name="description"
-		content="Plain-language paper notes for RAI wildfire AI research, with visual summaries and arXiv links."
+		content="Research notes from RAI wildfire studies, with concise summaries, selected figures, and links to the full papers."
 	/>
 </svelte:head>
 
@@ -184,19 +184,19 @@
 	<div class="notes-layout">
 		<div class="notes-main">
 			<section class="notes-intro" aria-labelledby="notes-title">
-				<p class="eyebrow">Paper notes</p>
+				<p class="eyebrow">Research briefs</p>
 				<h1 id="notes-title">Research Notes</h1>
 				<p>
-					Plain-language entries for RAI wildfire AI papers. Each note keeps the math in the
-					paper, and brings forward the problem, the data, the evaluation choice, and the
-					practical takeaway.
+					Concise summaries of RAI wildfire studies. Each entry highlights the problem setting, data
+					sources, evaluation choices, and operational implications, with links to the full paper
+					and supporting materials.
 				</p>
 			</section>
 
-			<section class="paper-list" aria-label="Paper notes">
+			<section class="paper-list" aria-label="Research briefs">
 				<div class="section-heading">
-					<p class="eyebrow">Featured papers</p>
-					<h2>Readable research entries</h2>
+					<p class="eyebrow">Featured studies</p>
+					<h2>Current Research</h2>
 				</div>
 
 				{#each papers as paper}
@@ -234,7 +234,7 @@
 							<div class="question-box">
 								<FireOutline class="question-icon" />
 								<div>
-									<span>Main question</span>
+									<span>Research question</span>
 									<p>{paper.question}</p>
 								</div>
 							</div>
@@ -250,13 +250,13 @@
 									<FilePdfOutline class="action-icon" />
 									Read PDF
 								</a>
-								<a href={paper.artifactHref} target="_blank" rel="noreferrer">
-									{#if paper.artifactHref.includes('github.com')}
+								<a href={paper.resourceHref} target="_blank" rel="noreferrer">
+									{#if paper.resourceHref.includes('github.com')}
 										<GithubSolid class="action-icon" />
 									{:else}
 										<DatabaseOutline class="action-icon" />
 									{/if}
-									{paper.artifactLabel}
+									{paper.resourceLabel}
 									<ArrowUpRightFromSquareOutline class="action-icon action-icon--small" />
 								</a>
 							</div>
@@ -265,10 +265,10 @@
 				{/each}
 			</section>
 
-			<section class="gallery-section" aria-label="Visual idea gallery">
+			<section class="gallery-section" aria-label="Data layer gallery">
 				<div class="section-heading">
-					<p class="eyebrow">Visual wall</p>
-					<h2>Image-heavy reading cues</h2>
+					<p class="eyebrow">Data context</p>
+					<h2>Signals Used Across Studies</h2>
 				</div>
 
 				<div class="gallery-grid">
@@ -284,14 +284,14 @@
 				</div>
 			</section>
 
-			<section class="prompt-panel" aria-label="Image generation briefs">
-				<FileImageOutline class="prompt-icon" />
+			<section class="resource-panel" aria-label="Research note archive">
+				<FileImageOutline class="resource-icon" />
 				<div>
-					<p class="eyebrow">Visual archive</p>
-					<h2>Paper figures are now folded into the notes</h2>
+					<p class="eyebrow">Publication links</p>
+					<h2>Full Papers and Supporting Resources</h2>
 					<p>
-						The page uses the strongest uploaded figures for the two current entries, with
-						supporting environmental layers kept as quick visual cues for skimming.
+						Each note links back to the full manuscript and the associated model, code, or data
+						release when available.
 					</p>
 				</div>
 				<a href={withBase('/')}>
@@ -301,7 +301,7 @@
 			</section>
 		</div>
 
-		<aside class="notes-rail" aria-label="Research note visual summary">
+		<aside class="notes-rail" aria-label="Research note summary">
 			<div class="hero-showcase">
 				<img
 					src={researchNotesHero}
@@ -311,34 +311,34 @@
 			<div class="hero-note">
 				<FileImageOutline class="hero-icon" />
 				<div>
-					<span>Visual-first summaries</span>
-					<strong>2 papers ready, more can drop in cleanly</strong>
+					<span>Current collection</span>
+					<strong>Two wildfire studies with figures, links, and field-oriented takeaways</strong>
 				</div>
 			</div>
 
-			<div class="hero-strip" aria-label="Paper note highlights">
+			<div class="hero-strip" aria-label="Research note highlights">
 				<article>
 					<BookOpenOutline class="strip-icon strip-icon--red" />
 					<div>
-						<h2>Blog, not lecture notes</h2>
-						<p>Short summaries, decision context, and links back to the full technical papers.</p>
+						<h2>Research Context</h2>
+						<p>Short summaries connect each study to wildfire modeling and decision support.</p>
 					</div>
 				</article>
 
 				<article>
 					<LayersOutline class="strip-icon" />
 					<div>
-						<h2>Data-first visuals</h2>
-						<p>Images foreground weather, fuel, active fire, population, and evaluation artifacts.</p>
+						<h2>Data Sources</h2>
+						<p>Figures emphasize weather, fuel, active fire, exposure, and evaluation design.</p>
 					</div>
 				</article>
 
 				<article>
 					<GlobeOutline class="strip-icon strip-icon--green" />
 					<div>
-						<h2>Reusable format</h2>
+						<h2>Open Access</h2>
 						<p>
-							Each future paper can follow the same summary, question, takeaway, and image pattern.
+							Links point to public manuscripts, repositories, and model releases where available.
 						</p>
 					</div>
 				</article>
@@ -377,7 +377,7 @@
 	.notes-nav,
 	.notes-nav a,
 	.paper-actions a,
-	.prompt-panel a {
+	.resource-panel a {
 		display: inline-flex;
 		align-items: center;
 	}
@@ -412,7 +412,7 @@
 	}
 
 	.notes-nav a:hover,
-	.prompt-panel a:hover {
+	.resource-panel a:hover {
 		background: #e6eef0;
 		color: #0c2e28;
 	}
@@ -545,7 +545,7 @@
 	}
 
 	:global(.strip-icon),
-	:global(.prompt-icon) {
+	:global(.resource-icon) {
 		width: 30px;
 		height: 30px;
 		color: #296d98;
@@ -560,7 +560,7 @@
 	}
 
 	.section-heading h2,
-	.prompt-panel h2 {
+	.resource-panel h2 {
 		margin-bottom: 6px;
 		font-size: 1.32rem;
 		line-height: 1.2;
@@ -568,7 +568,7 @@
 	}
 
 	.hero-strip p,
-	.prompt-panel p {
+	.resource-panel p {
 		margin-bottom: 0;
 		color: #536360;
 		font-size: 0.92rem;
@@ -802,7 +802,7 @@
 	}
 
 	.paper-actions a,
-	.prompt-panel a {
+	.resource-panel a {
 		min-height: 42px;
 		gap: 8px;
 		border: 1px solid rgb(23 34 31 / 12%);
@@ -868,7 +868,7 @@
 		line-height: 1.55;
 	}
 
-	.prompt-panel {
+	.resource-panel {
 		display: grid;
 		grid-template-columns: 42px minmax(0, 1fr) auto;
 		gap: 18px;
@@ -890,7 +890,7 @@
 
 		.notes-layout,
 		.paper-card,
-		.prompt-panel {
+		.resource-panel {
 			grid-template-columns: 1fr;
 		}
 
@@ -1010,7 +1010,7 @@
 			height: 62px;
 		}
 
-		.prompt-panel {
+		.resource-panel {
 			align-items: start;
 		}
 	}
