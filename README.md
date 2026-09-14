@@ -8,13 +8,31 @@ Live URL:
 
 - `/` portal
 - `/research-notes/` research notes
+- `/hipergator-rai-resources/` RAI Lab HiPerGator access guide
 
 ## Local dev
 
 ```bash
 npm install
-npm run dev
+npm run dev -- --port 5175
 ```
+
+Open `http://localhost:5175/`. When using a remote workspace, forward port 5175.
+
+## Design and imagery
+
+The portal uses three Earth observation images for Research Notes, FireEye, and
+PyHazards. Research Notes presents the two studies with expandable illustrations.
+The shared header and footer live in `src/lib/components/SiteHeader.svelte` and
+`src/lib/components/SiteFooter.svelte`.
+
+Image provenance is documented in
+[`src/lib/assets/editorial/SOURCES.md`](src/lib/assets/editorial/SOURCES.md).
+Original uploaded images remain in `src/lib/assets/portal/` and
+`src/lib/assets/researchNotes/`. Inter is served locally with its font license.
+
+Run `npm run check` and `npm run build` before publishing. For a local check of
+GitHub Pages paths, use `BASE_PATH=/rai-hazard-hub npm run build`.
 
 ## Deployment
 

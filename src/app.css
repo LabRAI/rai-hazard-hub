@@ -1,13 +1,99 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./lib/assets/fonts/InterVariable.woff2") format("woff2");
+}
+
+.hub-site {
+  --ink: #252b2b;
+  --muted: #626a6b;
+  --line: #dce1df;
+  --accent: #a92b43;
+  --paper: #ffffff;
+  --wash: #f3f5f4;
+  min-height: 100dvh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+.hub-site *,
+.hub-site *::before,
+.hub-site *::after {
+  box-sizing: border-box;
+}
+.hub-site h1,
+.hub-site h2,
+.hub-site h3,
+.hub-site p,
+.hub-site figure {
+  margin: 0;
+}
+.hub-site a {
+  text-decoration: none;
+}
+.hub-site button {
+  font: inherit;
+}
+.hub-site :is(a, button, summary):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+.hub-site .site-width {
+  width: min(1248px, calc(100% - 80px));
+  margin-inline: auto;
+}
+.hub-site .eyebrow {
+  font-size: 11px;
+  font-weight: 650;
+  text-transform: uppercase;
+}
+.hub-site .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.hub-site .text-link:hover {
+  color: var(--accent);
+}
+.hub-site .small-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .hub-site .site-width {
+    width: calc(100% - 40px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hub-site *,
+  .hub-site *::before,
+  .hub-site *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
 
 html {
-	font-size: 12px;
-	font-family: 'Jura', sans-serif;
-	overscroll-behavior: none;
+  font-size: 12px;
+  font-family: "Jura", sans-serif;
+  overscroll-behavior: none;
 }
 
 @layer base {
-	input[type='search']::-webkit-search-cancel-button {
-		display: none;
-	}
+  input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+  }
 }
