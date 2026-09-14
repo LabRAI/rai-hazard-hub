@@ -18,3 +18,5 @@ overlay are applied only in CSS. Original user-provided portal images remain in
 
 [NASA image use guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/).
 Image credits do not imply a partnership or endorsement.
+
+The `fireeye-interface.webp` and `pyhazards-docs.webp` files are compact visual captures of the linked public pages, used as destination previews on the hub. They are not presented as current data snapshots.

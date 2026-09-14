@@ -15,6 +15,9 @@
   import hurricane from "$lib/assets/editorial/hurricane-1440.webp";
   import hurricaneSmall from "$lib/assets/editorial/hurricane-480.webp";
   import hurricaneMedium from "$lib/assets/editorial/hurricane-960.webp";
+  import wildfireFmPreview from "$lib/assets/editorial/wildfire-fm-card.webp";
+  import fireeyeInterface from "$lib/assets/editorial/fireeye-interface.webp";
+  import pyhazardsDocs from "$lib/assets/editorial/pyhazards-docs.webp";
   import { withBase } from "$lib/paths";
 
   const entries = [
@@ -32,13 +35,18 @@
       medium: terrainMedium,
       alt: "Forested valleys and granite peaks in Sequoia National Park, observed by Landsat 5.",
       color: "#356a57",
+      kind: "research",
+      preview: wildfireFmPreview,
+      previewAlt:
+        "Wildfire-FM paper figure with environmental inputs, a model backbone, and evaluation panels.",
+      previewLabel: "Paper / figures",
     },
     {
       number: "02",
-      category: "The map",
+      category: "The platform",
       title: "RAI FireEye",
       description:
-        "Wildfire observations, environmental layers, and forecasts in one map.",
+        "An interactive wildfire intelligence platform for observations, layers, and forecasts.",
       href: "https://rai-fire.com/",
       action: "Open FireEye",
       external: true,
@@ -47,13 +55,18 @@
       medium: wildfireMedium,
       alt: "Smoke and infrared fire signatures from the 2018 Camp Fire, observed by Landsat 8.",
       color: "#ad4739",
+      kind: "map",
+      preview: fireeyeInterface,
+      previewAlt:
+        "RAI FireEye interface showing a wildfire risk map, layers, and forecast controls.",
+      previewLabel: "Platform / map layers",
     },
     {
       number: "03",
-      category: "The toolkit",
+      category: "The library",
       title: "PyHazards",
       description:
-        "Open datasets, models, and Python workflows for hazard science.",
+        "A Python library for open datasets, models, benchmarks, and hazard workflows.",
       href: "https://labrai.github.io/PyHazards/",
       action: "Explore the documentation",
       external: true,
@@ -62,6 +75,11 @@
       medium: hurricaneMedium,
       alt: "The eye and spiral cloud bands of Hurricane Florence, photographed from the International Space Station in 2018.",
       color: "#326f89",
+      kind: "library",
+      preview: pyhazardsDocs,
+      previewAlt:
+        "PyHazards documentation interface showing a navigation sidebar and API content.",
+      previewLabel: "Library / docs + API",
     },
   ];
 </script>
@@ -100,6 +118,16 @@
                   height="960"
                   fetchpriority="high"
                 />
+                <div
+                  class={`destination-preview destination-preview--${entry.kind}`}
+                >
+                  <img
+                    src={entry.preview}
+                    alt={entry.previewAlt}
+                    loading="lazy"
+                  />
+                  <span class="preview-label">{entry.previewLabel}</span>
+                </div>
                 <span class="entry-number" aria-hidden="true"
                   >{entry.number}</span
                 >
@@ -201,13 +229,56 @@
   }
   .destination-image::after {
     position: absolute;
-    inset: 48% 0 0;
+    inset: 64% 0 0;
     content: "";
     background: linear-gradient(transparent, rgb(13 23 20 / 78%));
     pointer-events: none;
+    z-index: 1;
+  }
+  .destination-preview {
+    position: absolute;
+    z-index: 2;
+    top: 18px;
+    right: 18px;
+    left: 18px;
+    height: 57%;
+    overflow: hidden;
+    border: 1px solid rgb(255 255 255 / 88%);
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 10px 24px rgb(9 22 18 / 22%);
+  }
+  .destination-preview > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top left;
+  }
+  .preview-label {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    border: 1px solid rgb(255 255 255 / 78%);
+    border-radius: 3px;
+    background: rgb(255 255 255 / 92%);
+    padding: 5px 7px;
+    color: #273330;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    box-shadow: 0 3px 8px rgb(18 30 26 / 12%);
+  }
+  .destination-preview--map .preview-label {
+    color: #91372e;
+  }
+  .destination-preview--library .preview-label {
+    color: #2c647c;
   }
   .entry-number {
     position: absolute;
+    z-index: 3;
     top: 20px;
     left: 24px;
     color: #fff;
@@ -219,7 +290,7 @@
     bottom: 26px;
     left: 26px;
     right: 66px;
-    z-index: 1;
+    z-index: 3;
     color: #fff;
   }
   .image-heading > span {
@@ -235,7 +306,7 @@
   }
   .image-arrow {
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     right: 25px;
     bottom: 30px;
     width: 27px;
