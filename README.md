@@ -8,6 +8,7 @@ Live URL:
 
 - `/` portal
 - `/research-notes/` research notes
+- `/hipergator-rai-resources/` RAI Lab HiPerGator access guide
 
 ## Local dev
 
