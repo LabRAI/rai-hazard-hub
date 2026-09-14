@@ -6,18 +6,9 @@
   import SiteHeader from "$lib/components/SiteHeader.svelte";
   import SiteFooter from "$lib/components/SiteFooter.svelte";
   import PageViewMap from "$lib/components/sidebar/pageViewMap.svelte";
-  import terrain from "$lib/assets/editorial/terrain-1440.webp";
-  import terrainSmall from "$lib/assets/editorial/terrain-480.webp";
-  import terrainMedium from "$lib/assets/editorial/terrain-960.webp";
-  import wildfire from "$lib/assets/editorial/wildfire-1440.webp";
-  import wildfireSmall from "$lib/assets/editorial/wildfire-480.webp";
-  import wildfireMedium from "$lib/assets/editorial/wildfire-960.webp";
-  import hurricane from "$lib/assets/editorial/hurricane-1440.webp";
-  import hurricaneSmall from "$lib/assets/editorial/hurricane-480.webp";
-  import hurricaneMedium from "$lib/assets/editorial/hurricane-960.webp";
-  import wildfireFmPreview from "$lib/assets/editorial/wildfire-fm-card.webp";
-  import fireeyeInterface from "$lib/assets/editorial/fireeye-interface.webp";
-  import pyhazardsDocs from "$lib/assets/editorial/pyhazards-docs.webp";
+  import researchNotesImage from "$lib/assets/portal/research-notes.png";
+  import fireeyeImage from "$lib/assets/portal/fireeye.png";
+  import pyhazardsImage from "$lib/assets/portal/pyhazards.png";
   import { withBase } from "$lib/paths";
 
   const entries = [
@@ -30,16 +21,12 @@
       href: withBase("/research-notes/"),
       action: "Explore the studies",
       external: false,
-      image: terrain,
-      small: terrainSmall,
-      medium: terrainMedium,
-      alt: "Forested valleys and granite peaks in Sequoia National Park, observed by Landsat 5.",
+      image: researchNotesImage,
+      alt: "A research notebook and wildfire analysis papers with maps, charts, and data visualizations.",
       color: "#356a57",
       kind: "research",
-      preview: wildfireFmPreview,
-      previewAlt:
-        "Wildfire-FM paper figure with environmental inputs, a model backbone, and evaluation panels.",
-      previewLabel: "Paper / figures",
+      cueLabel: "Papers / figures",
+      cueDetail: "02 studies · notes",
     },
     {
       number: "02",
@@ -50,16 +37,12 @@
       href: "https://rai-fire.com/",
       action: "Open FireEye",
       external: true,
-      image: wildfire,
-      small: wildfireSmall,
-      medium: wildfireMedium,
-      alt: "Smoke and infrared fire signatures from the 2018 Camp Fire, observed by Landsat 8.",
+      image: fireeyeImage,
+      alt: "A stylized wildfire intelligence map with environmental layers, fire detections, and forecast controls.",
       color: "#ad4739",
       kind: "map",
-      preview: fireeyeInterface,
-      previewAlt:
-        "RAI FireEye interface showing a wildfire risk map, layers, and forecast controls.",
-      previewLabel: "Platform / map layers",
+      cueLabel: "Live map / layers",
+      cueDetail: "Risk · fire · weather",
     },
     {
       number: "03",
@@ -70,16 +53,12 @@
       href: "https://labrai.github.io/PyHazards/",
       action: "Explore the documentation",
       external: true,
-      image: hurricane,
-      small: hurricaneSmall,
-      medium: hurricaneMedium,
-      alt: "The eye and spiral cloud bands of Hurricane Florence, photographed from the International Space Station in 2018.",
+      image: pyhazardsImage,
+      alt: "A hazard library shield connected to wildfire, flood, earthquake, and tropical cyclone data modules.",
       color: "#326f89",
       kind: "library",
-      preview: pyhazardsDocs,
-      previewAlt:
-        "PyHazards documentation interface showing a navigation sidebar and API content.",
-      previewLabel: "Library / docs + API",
+      cueLabel: "Library / docs + API",
+      cueDetail: "Datasets · models",
     },
   ];
 </script>
@@ -111,29 +90,23 @@
               <div class="destination-image">
                 <img
                   src={entry.image}
-                  srcset={`${entry.small} 480w, ${entry.medium} 960w, ${entry.image} 1440w`}
-                  sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1328px) calc((100vw - 128px) / 3), 400px"
                   alt={entry.alt}
-                  width="1440"
-                  height="960"
+                  width="1536"
+                  height="1024"
                   fetchpriority="high"
                 />
-                <div
-                  class={`destination-preview destination-preview--${entry.kind}`}
-                >
-                  <img
-                    src={entry.preview}
-                    alt={entry.previewAlt}
-                    loading="lazy"
-                  />
-                  <span class="preview-label">{entry.previewLabel}</span>
-                </div>
                 <span class="entry-number" aria-hidden="true"
                   >{entry.number}</span
                 >
                 <div class="image-heading">
                   <span>{entry.category}</span>
                   <h2>{entry.title}</h2>
+                  <div class={`destination-cue destination-cue--${entry.kind}`}>
+                    <span class="cue-mark" aria-hidden="true"></span>
+                    <span>{entry.cueLabel}</span>
+                    <i aria-hidden="true"></i>
+                    <small>{entry.cueDetail}</small>
+                  </div>
                 </div>
                 <span class="image-arrow" aria-hidden="true"
                   ><ArrowRightOutline /></span
@@ -235,46 +208,78 @@
     pointer-events: none;
     z-index: 1;
   }
-  .destination-preview {
-    position: absolute;
-    z-index: 2;
-    top: 18px;
-    right: 18px;
-    left: 18px;
-    height: 57%;
-    overflow: hidden;
-    border: 1px solid rgb(255 255 255 / 88%);
-    border-radius: 4px;
-    background: #fff;
-    box-shadow: 0 10px 24px rgb(9 22 18 / 22%);
-  }
-  .destination-preview > img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top left;
-  }
-  .preview-label {
-    position: absolute;
-    top: 9px;
-    right: 9px;
-    border: 1px solid rgb(255 255 255 / 78%);
-    border-radius: 3px;
-    background: rgb(255 255 255 / 92%);
-    padding: 5px 7px;
-    color: #273330;
+  .destination-cue {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 13px;
+    color: rgb(255 255 255 / 94%);
     font-size: 9px;
     font-weight: 700;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
     text-transform: uppercase;
-    box-shadow: 0 3px 8px rgb(18 30 26 / 12%);
   }
-  .destination-preview--map .preview-label {
-    color: #91372e;
+  .cue-mark {
+    display: block;
+    position: relative;
+    width: 17px;
+    height: 17px;
+    flex: 0 0 auto;
+    border: 1px solid rgb(255 255 255 / 72%);
+    border-radius: 50%;
+    background: rgb(255 255 255 / 10%);
   }
-  .destination-preview--library .preview-label {
-    color: #2c647c;
+  .cue-mark::before,
+  .cue-mark::after {
+    position: absolute;
+    content: "";
+  }
+  .destination-cue--research .cue-mark::before {
+    inset: 4px 3px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+  }
+  .destination-cue--research .cue-mark::after {
+    top: 7px;
+    right: 3px;
+    left: 3px;
+    border-top: 1px solid #fff;
+  }
+  .destination-cue--map .cue-mark::before {
+    top: 4px;
+    left: 4px;
+    width: 7px;
+    height: 7px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+  }
+  .destination-cue--map .cue-mark::after {
+    right: 3px;
+    bottom: 4px;
+    width: 6px;
+    border-top: 1px solid #fff;
+    transform: rotate(-45deg);
+  }
+  .destination-cue--library .cue-mark::before {
+    inset: 4px 3px;
+    border: 1px solid #fff;
+    border-radius: 1px;
+  }
+  .destination-cue--library .cue-mark::after {
+    top: 7px;
+    right: 5px;
+    left: 5px;
+    border-top: 1px solid #fff;
+  }
+  .destination-cue small {
+    color: rgb(255 255 255 / 68%);
+    font-size: 9px;
+    line-height: 1.25;
+  }
+  .destination-cue i {
+    width: 22px;
+    border-top: 1px solid rgb(255 255 255 / 48%);
   }
   .entry-number {
     position: absolute;
@@ -289,7 +294,7 @@
     position: absolute;
     bottom: 26px;
     left: 26px;
-    right: 66px;
+    right: 42px;
     z-index: 3;
     color: #fff;
   }
@@ -394,7 +399,7 @@
     }
     .image-heading {
       left: 20px;
-      right: 45px;
+      right: 34px;
     }
     .image-arrow {
       right: 18px;
@@ -402,6 +407,9 @@
     }
     h2 {
       font-size: 23px;
+    }
+    .destination-cue i {
+      width: 12px;
     }
     h1 {
       font-size: 36px;
