@@ -1,0 +1,33 @@
+Create a new premium scientific editorial image, landscape 1536 x 1024.
+
+An extreme close view of an OPEN WILDFIRE RESEARCH JOURNAL. The open spread is
+larger than the camera frame: its pages continue beyond the left, right, top,
+and bottom edges. The entire scene is the publication itself. Show a subtle
+centerfold just right of center, convincing printed-paper texture, slight page
+curvature and a fine fold shadow so it immediately reads as a real publication.
+Camera nearly overhead, tilted only 15 degrees from vertical. Do not show the
+outside outline of the whole book or any surrounding table.
+
+The left 58 percent is a LARGE edge-to-edge printed landscape photograph of
+green forested mountain ridges, a blue lake, and a localized wildfire plume.
+Make the forest and terrain crisp, luminous, detailed, and visually engaging.
+The right 42 percent is a tightly edited research article: a small elegant
+heading "RESEARCH", a discreet vermilion section mark, two short columns of
+fine editorial text, and a substantial scientific map figure that occupies
+most of the lower right page. Body text recedes as print texture at thumbnail
+scale; do not include equations, invented numerical findings, or big headlines.
+Use narrow journal margins and precise alignment. Keep the centerfold visible.
+
+Full-bleed, very close framing is the critical requirement. At least 90 percent
+of the frame contains publication content and its printed imagery. All four
+edges meet paper, photograph, or figure content. NO empty lower strip, title
+safe area, wide white margins, studio ground, floating book, mockup frame,
+laptop, pen, piles of pages, decorative grid, glossy plastic, neon, watermark,
+or website screenshot. Do not zoom out to show a complete isolated object.
+
+Unify this series with realistic matte materials, diffuse daylight from upper
+left, natural forest greens, clear mineral blues, neutral paper whites and
+graphite, and small vermilion accents. High local detail without oversaturation
+or heavy darkening. It should feel like leaning close to a beautifully printed
+science journal, visually rich and readable as a publication at 400 pixels wide.
+The website will typeset its own title OUTSIDE this image.

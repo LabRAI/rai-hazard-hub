@@ -6,20 +6,19 @@
   import SiteHeader from "$lib/components/SiteHeader.svelte";
   import SiteFooter from "$lib/components/SiteFooter.svelte";
   import PageViewMap from "$lib/components/sidebar/pageViewMap.svelte";
-  import researchNotesImage from "$lib/assets/portal/editorial-v3/research-notes-1536.webp";
-  import researchNotesSmall from "$lib/assets/portal/editorial-v3/research-notes-480.webp";
-  import researchNotesMedium from "$lib/assets/portal/editorial-v3/research-notes-960.webp";
-  import fireeyeImage from "$lib/assets/portal/editorial-v3/fireeye-1536.webp";
-  import fireeyeSmall from "$lib/assets/portal/editorial-v3/fireeye-480.webp";
-  import fireeyeMedium from "$lib/assets/portal/editorial-v3/fireeye-960.webp";
-  import pyhazardsImage from "$lib/assets/portal/editorial-v3/pyhazards-1536.webp";
-  import pyhazardsSmall from "$lib/assets/portal/editorial-v3/pyhazards-480.webp";
-  import pyhazardsMedium from "$lib/assets/portal/editorial-v3/pyhazards-960.webp";
+  import researchNotesImage from "$lib/assets/portal/editorial-v4/research-notes-1536.webp";
+  import researchNotesSmall from "$lib/assets/portal/editorial-v4/research-notes-480.webp";
+  import researchNotesMedium from "$lib/assets/portal/editorial-v4/research-notes-960.webp";
+  import fireeyeImage from "$lib/assets/portal/editorial-v4/fireeye-1536.webp";
+  import fireeyeSmall from "$lib/assets/portal/editorial-v4/fireeye-480.webp";
+  import fireeyeMedium from "$lib/assets/portal/editorial-v4/fireeye-960.webp";
+  import pyhazardsImage from "$lib/assets/portal/editorial-v4/pyhazards-1536.webp";
+  import pyhazardsSmall from "$lib/assets/portal/editorial-v4/pyhazards-480.webp";
+  import pyhazardsMedium from "$lib/assets/portal/editorial-v4/pyhazards-960.webp";
   import { withBase } from "$lib/paths";
 
   const entries = [
     {
-      number: "01",
       category: "Research articles",
       title: "Research Notes",
       description:
@@ -30,11 +29,10 @@
       image: researchNotesImage,
       small: researchNotesSmall,
       medium: researchNotesMedium,
-      alt: "An illustrated open research journal combines a wildfire landscape, article text, and a scientific map.",
+      alt: "A close view of an illustrated research journal, with wildfire imagery across one page and an article and map on the other.",
       color: "#356a57",
     },
     {
-      number: "02",
       category: "Interactive platform",
       title: "RAI FireEye",
       description:
@@ -45,11 +43,10 @@
       image: fireeyeImage,
       small: fireeyeSmall,
       medium: fireeyeMedium,
-      alt: "An illustrated mountain landscape with transparent map layers showing a fire perimeter, observations, and wind.",
+      alt: "An illustrated wildfire map fills the view with mountain terrain, a fire perimeter, observation points, and wind overlays.",
       color: "#ad4739",
     },
     {
-      number: "03",
       category: "Python library",
       title: "PyHazards",
       description:
@@ -60,7 +57,7 @@
       image: pyhazardsImage,
       small: pyhazardsSmall,
       medium: pyhazardsMedium,
-      alt: "An illustrated Python import statement and API reference accompany modular wildfire, flood, and cyclone data tiles.",
+      alt: "The Python statement import pyhazards appears above closely joined wildfire, floodplain, and cyclone data imagery.",
       color: "#326f89",
     },
   ];
@@ -100,18 +97,15 @@
                   height="1024"
                   fetchpriority="high"
                 />
-                <span class="entry-number" aria-hidden="true"
-                  >{entry.number}</span
-                >
-                <div class="image-heading">
-                  <div>
-                    <span class="image-category">{entry.category}</span>
-                    <h2>{entry.title}</h2>
-                  </div>
-                  <span class="image-arrow" aria-hidden="true"
-                    ><ArrowRightOutline /></span
-                  >
+              </div>
+              <div class="image-heading">
+                <div>
+                  <span class="image-category">{entry.category}</span>
+                  <h2>{entry.title}</h2>
                 </div>
+                <span class="image-arrow" aria-hidden="true"
+                  ><ArrowRightOutline /></span
+                >
               </div>
               <div class="destination-copy">
                 <p>{entry.description}</p>
@@ -182,7 +176,7 @@
     isolation: isolate;
     overflow: hidden;
     border-radius: 5px;
-    background: #e9edf1;
+    background: var(--wash);
   }
   .destination-image img {
     display: block;
@@ -190,16 +184,7 @@
     height: auto;
     aspect-ratio: 3 / 2;
     object-fit: cover;
-    mask-image: linear-gradient(#000 92%, transparent);
     transition: transform 450ms ease;
-  }
-  .entry-number {
-    position: absolute;
-    z-index: 3;
-    top: 16px;
-    left: 18px;
-    color: #596865;
-    font-size: 11px;
   }
   .image-heading {
     position: relative;
@@ -207,8 +192,7 @@
     align-items: flex-end;
     justify-content: space-between;
     gap: 12px;
-    min-height: 86px;
-    padding: 0 24px 24px;
+    padding-top: 12px;
     color: var(--ink);
   }
   .image-category {
@@ -234,7 +218,7 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding: 19px 2px 0;
+    padding: 12px 0 0;
   }
   .destination-copy p {
     flex: 1;
@@ -295,10 +279,6 @@
     .destination-grid {
       gap: 18px;
     }
-    .image-heading {
-      padding-inline: 20px;
-      min-height: 82px;
-    }
     .image-arrow {
       display: none;
     }
@@ -337,10 +317,6 @@
     .destination-grid {
       grid-template-columns: 1fr;
       gap: 30px;
-    }
-    .image-heading {
-      padding-inline: 23px;
-      min-height: 86px;
     }
     .image-arrow {
       display: block;

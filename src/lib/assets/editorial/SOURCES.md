@@ -1,7 +1,7 @@
 # Image Sources
 
 The current portal uses the generated editorial illustrations documented in
-[`../portal/editorial-v3/SOURCES.md`](../portal/editorial-v3/SOURCES.md).
+[`../portal/editorial-v4/SOURCES.md`](../portal/editorial-v4/SOURCES.md).
 This directory retains the earlier Earth observation imagery and the illustrations
 used on the Research Notes page.
 

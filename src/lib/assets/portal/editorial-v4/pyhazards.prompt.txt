@@ -1,0 +1,40 @@
+Create a new premium scientific editorial image, landscape 1536 x 1024, in the
+same tactile photographic series as the supplied research-journal reference.
+
+A CLOSE VIEW of a PYTHON HAZARD DATA LIBRARY composed as a precisely assembled
+scientific data atlas. The code and data surfaces extend beyond all four edges
+of the image. Nearly overhead camera tilted only 15 degrees from vertical,
+soft daylight from the upper left, subtle paper-and-composite material texture.
+
+Across the top 20 percent, integrate one narrow matte graphite source-code
+strip, flush with the data surfaces below, extending past the left and right
+edges. Print exactly "import pyhazards" in elegant readable monospace:
+"import" in muted mineral blue, "pyhazards" in near-white. Keep the complete
+statement comfortably inside the frame. A small flush tab reading "API" sits
+at the upper right. The source-code strip is part of the atlas composition,
+not a detached sign, a terminal window, browser chrome, or screenshot.
+
+The lower 80 percent is FILLED by THREE closely joined reusable data sheets:
+forest and a restrained wildfire perimeter on the left, a blue river and
+floodplain in the middle, and a natural spiral storm in satellite imagery on
+the right. Each geographic image is large, richly detailed and tightly cropped.
+The three surfaces tessellate with only hairline seams. Tiny registration
+notches and a slight overlap reveal that they are interchangeable data modules.
+No broad white frames, gaps, thick blocks, pedestals, or surrounding ground.
+The data sheets run off the bottom and both sides of the camera frame.
+
+Full-bleed, close framing is the critical requirement. At least 95 percent of
+the canvas is meaningful code or geographic image content. NO empty bottom
+strip, title safe area, studio tabletop, isolated object, toy diorama, floating
+tiles, central shield, logo, neon, connector network, decorative cubes or extra
+charts. Do not zoom out to show the whole arrangement. Do not add more text
+than the exact Python statement and the small "API" tab.
+
+Match the reference's soft daylight, realistic matte textures, crisp photographic
+detail, natural forest green, mineral blue, graphite and modest vermilion.
+Match its CLOSE framing and image density, not its book subject. The three
+dataset modules and source code must form one organized, visually rich image
+that reads as a reusable Python data library at 400 pixels wide. No publication
+pages. The website will typeset its own title OUTSIDE this image.
+
+The attached image is a STYLE REFERENCE ONLY. Match its daylight, natural palette, matte materials, camera angle, sharpness, and close framing. Create the distinct subject requested above. Do not repeat its journal, printed publication, page layout, or text. Generate a new standalone composition filling the entire frame. Do not add a studio background or any empty title area.

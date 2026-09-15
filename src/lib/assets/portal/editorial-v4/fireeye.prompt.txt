@@ -1,0 +1,37 @@
+Create a new premium scientific editorial image, landscape 1536 x 1024, in the
+same tactile photographic series as the supplied research-journal reference.
+
+An immersive CLOSE VIEW of a geographic wildfire map. Forested mountain relief,
+a winding blue reservoir, pale roads and detailed valleys FILL THE ENTIRE FRAME
+and continue beyond every edge. Nearly overhead camera tilted only 15 degrees
+from vertical. Render real-looking terrain texture with clear scale and a
+coherent drainage network. No sky, horizon, surrounding table or empty floor.
+Do not depict the terrain as a small isolated model on a pedestal.
+
+Integrate TWO fine transparent geographic overlays directly above the terrain,
+almost touching it. A restrained vermilion fire perimeter and a handful of small
+observation points align with one region; sparse mineral-blue wind arrows
+follow the geographic surface. Keep most of the terrain sharply visible and
+uncovered. The fine overlapping edges of the map sheets can be seen near the
+upper right and one side, providing a subtle sense of layered information, but
+the sheets also extend beyond the canvas. All features register to the same
+underlying terrain. Put only a tiny vertical group of three layer symbols near
+the upper right edge. No panels, legends full of text, statistics or fake dates.
+
+Full-bleed, close framing is the critical requirement. At least 95 percent of
+the frame is terrain and geographic information, reaching all four edges.
+There is NO white studio backdrop, isolated rectangular slab with visible
+outer boundary, floating miniature, empty bottom strip, title safe area,
+computer, screenshot, control dashboard, unrelated chart, large flame icon,
+heavy smoke, sci-fi glow or decorative network. Do not zoom out to reveal
+the whole map object. Keep the composition calm: one clear map region with
+a small number of legible overlays, not a busy collage.
+
+Match the reference's realistic material texture, upper-left soft daylight,
+natural forest green, mineral blue, neutral graphite and restrained vermilion.
+Match its CLOSE framing and image density, not its book subject or printed
+layout. The image should be lush and precise, clearly a layered geographic
+analysis surface at 400 pixels wide. No publication pages. The website will
+typeset its own title OUTSIDE this image.
+
+The attached image is a STYLE REFERENCE ONLY. Match its daylight, natural palette, matte materials, camera angle, sharpness, and close framing. Create the distinct subject requested above. Do not repeat its journal, printed publication, page layout, or text. Generate a new standalone composition filling the entire frame. Do not add a studio background or any empty title area.
