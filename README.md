@@ -25,9 +25,13 @@ The portal uses three coordinated editorial illustrations with close framing:
 a publication for Research Notes, geographic layers for FireEye, and Python data
 modules for PyHazards. Titles sit below the artwork. Research Notes presents the
 two studies with expandable illustrations.
-The homepage uses a 1360px maximum content width and 4:3 artwork on desktop,
-with individual crop positions to preserve each subject. Mobile keeps the full
-3:2 artwork. Other pages retain their existing content width.
+The homepage and Research Notes share a 1360px maximum content width. The homepage
+uses 4:3 artwork on desktop, with individual crop positions to preserve each
+subject; mobile keeps the full 3:2 artwork. Research Notes pairs serif article
+titles with Inter body text, a study overview beside the introduction, and a
+supporting illustration beside the key findings. Tablet and mobile layouts
+rearrange these elements for reading, and all four figures open in accessible
+dialogs with their study names and captions.
 The shared header and footer live in `src/lib/components/SiteHeader.svelte` and
 `src/lib/components/SiteFooter.svelte`.
 
