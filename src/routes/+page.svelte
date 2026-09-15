@@ -6,15 +6,21 @@
   import SiteHeader from "$lib/components/SiteHeader.svelte";
   import SiteFooter from "$lib/components/SiteFooter.svelte";
   import PageViewMap from "$lib/components/sidebar/pageViewMap.svelte";
-  import researchNotesImage from "$lib/assets/portal/research-notes.png";
-  import fireeyeImage from "$lib/assets/portal/fireeye.png";
-  import pyhazardsImage from "$lib/assets/portal/pyhazards.png";
+  import researchNotesImage from "$lib/assets/portal/editorial-v3/research-notes-1536.webp";
+  import researchNotesSmall from "$lib/assets/portal/editorial-v3/research-notes-480.webp";
+  import researchNotesMedium from "$lib/assets/portal/editorial-v3/research-notes-960.webp";
+  import fireeyeImage from "$lib/assets/portal/editorial-v3/fireeye-1536.webp";
+  import fireeyeSmall from "$lib/assets/portal/editorial-v3/fireeye-480.webp";
+  import fireeyeMedium from "$lib/assets/portal/editorial-v3/fireeye-960.webp";
+  import pyhazardsImage from "$lib/assets/portal/editorial-v3/pyhazards-1536.webp";
+  import pyhazardsSmall from "$lib/assets/portal/editorial-v3/pyhazards-480.webp";
+  import pyhazardsMedium from "$lib/assets/portal/editorial-v3/pyhazards-960.webp";
   import { withBase } from "$lib/paths";
 
   const entries = [
     {
       number: "01",
-      category: "The research",
+      category: "Research articles",
       title: "Research Notes",
       description:
         "The questions, data, and findings behind our wildfire research.",
@@ -22,15 +28,14 @@
       action: "Explore the studies",
       external: false,
       image: researchNotesImage,
-      alt: "A research notebook and wildfire analysis papers with maps, charts, and data visualizations.",
+      small: researchNotesSmall,
+      medium: researchNotesMedium,
+      alt: "An illustrated open research journal combines a wildfire landscape, article text, and a scientific map.",
       color: "#356a57",
-      kind: "research",
-      cueLabel: "Papers / figures",
-      cueDetail: "02 studies · notes",
     },
     {
       number: "02",
-      category: "The platform",
+      category: "Interactive platform",
       title: "RAI FireEye",
       description:
         "An interactive wildfire intelligence platform for observations, layers, and forecasts.",
@@ -38,15 +43,14 @@
       action: "Open FireEye",
       external: true,
       image: fireeyeImage,
-      alt: "A stylized wildfire intelligence map with environmental layers, fire detections, and forecast controls.",
+      small: fireeyeSmall,
+      medium: fireeyeMedium,
+      alt: "An illustrated mountain landscape with transparent map layers showing a fire perimeter, observations, and wind.",
       color: "#ad4739",
-      kind: "map",
-      cueLabel: "Live map / layers",
-      cueDetail: "Risk · fire · weather",
     },
     {
       number: "03",
-      category: "The library",
+      category: "Python library",
       title: "PyHazards",
       description:
         "A Python library for open datasets, models, benchmarks, and hazard workflows.",
@@ -54,11 +58,10 @@
       action: "Explore the documentation",
       external: true,
       image: pyhazardsImage,
-      alt: "A hazard library shield connected to wildfire, flood, earthquake, and tropical cyclone data modules.",
+      small: pyhazardsSmall,
+      medium: pyhazardsMedium,
+      alt: "An illustrated Python import statement and API reference accompany modular wildfire, flood, and cyclone data tiles.",
       color: "#326f89",
-      kind: "library",
-      cueLabel: "Library / docs + API",
-      cueDetail: "Datasets · models",
     },
   ];
 </script>
@@ -90,6 +93,8 @@
               <div class="destination-image">
                 <img
                   src={entry.image}
+                  srcset={`${entry.small} 480w, ${entry.medium} 960w, ${entry.image} 1536w`}
+                  sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) calc((100vw - 116px) / 3), (max-width: 1328px) calc((100vw - 128px) / 3), 400px"
                   alt={entry.alt}
                   width="1536"
                   height="1024"
@@ -99,18 +104,14 @@
                   >{entry.number}</span
                 >
                 <div class="image-heading">
-                  <span>{entry.category}</span>
-                  <h2>{entry.title}</h2>
-                  <div class={`destination-cue destination-cue--${entry.kind}`}>
-                    <span class="cue-mark" aria-hidden="true"></span>
-                    <span>{entry.cueLabel}</span>
-                    <i aria-hidden="true"></i>
-                    <small>{entry.cueDetail}</small>
+                  <div>
+                    <span class="image-category">{entry.category}</span>
+                    <h2>{entry.title}</h2>
                   </div>
+                  <span class="image-arrow" aria-hidden="true"
+                    ><ArrowRightOutline /></span
+                  >
                 </div>
-                <span class="image-arrow" aria-hidden="true"
-                  ><ArrowRightOutline /></span
-                >
               </div>
               <div class="destination-copy">
                 <p>{entry.description}</p>
@@ -126,21 +127,11 @@
         {/each}
       </div>
       <div class="image-caption">
-        <p>Earth, observed. <span>Land, fire, and atmosphere.</span></p>
         <details class="image-credits">
           <summary>Image credits</summary>
           <div class="credit-list">
-            <a
-              href="https://images.nasa.gov/details/GSFC_20171208_Archive_e000235"
-              >Sierra Nevada: NASA / Landsat 5, October 2008</a
-            >
-            <a
-              href="https://science.nasa.gov/earth/earth-observatory/camp-fire-rages-in-california-144225/"
-              >Camp Fire: NASA Earth Observatory / USGS, November 2018</a
-            >
-            <a href="https://images.nasa.gov/details/iss056e162187"
-              >Hurricane Florence: NASA / ISS, September 2018</a
-            >
+            <p>AI-generated editorial illustrations for RAI Lab.</p>
+            <p>Map details are illustrative.</p>
           </div>
         </details>
       </div>
@@ -188,120 +179,42 @@
   }
   .destination-image {
     position: relative;
-    aspect-ratio: 1.13;
     isolation: isolate;
     overflow: hidden;
     border-radius: 5px;
-    background: #e8edeb;
+    background: #e9edf1;
   }
   .destination-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 450ms ease;
-  }
-  .destination-image::after {
-    position: absolute;
-    inset: 64% 0 0;
-    content: "";
-    background: linear-gradient(transparent, rgb(13 23 20 / 78%));
-    pointer-events: none;
-    z-index: 1;
-  }
-  .destination-cue {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    margin-top: 13px;
-    color: rgb(255 255 255 / 94%);
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    line-height: 1.3;
-    text-transform: uppercase;
-  }
-  .cue-mark {
     display: block;
-    position: relative;
-    width: 17px;
-    height: 17px;
-    flex: 0 0 auto;
-    border: 1px solid rgb(255 255 255 / 72%);
-    border-radius: 50%;
-    background: rgb(255 255 255 / 10%);
-  }
-  .cue-mark::before,
-  .cue-mark::after {
-    position: absolute;
-    content: "";
-  }
-  .destination-cue--research .cue-mark::before {
-    inset: 4px 3px;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-  }
-  .destination-cue--research .cue-mark::after {
-    top: 7px;
-    right: 3px;
-    left: 3px;
-    border-top: 1px solid #fff;
-  }
-  .destination-cue--map .cue-mark::before {
-    top: 4px;
-    left: 4px;
-    width: 7px;
-    height: 7px;
-    border: 1px solid #fff;
-    border-radius: 50%;
-  }
-  .destination-cue--map .cue-mark::after {
-    right: 3px;
-    bottom: 4px;
-    width: 6px;
-    border-top: 1px solid #fff;
-    transform: rotate(-45deg);
-  }
-  .destination-cue--library .cue-mark::before {
-    inset: 4px 3px;
-    border: 1px solid #fff;
-    border-radius: 1px;
-  }
-  .destination-cue--library .cue-mark::after {
-    top: 7px;
-    right: 5px;
-    left: 5px;
-    border-top: 1px solid #fff;
-  }
-  .destination-cue small {
-    color: rgb(255 255 255 / 68%);
-    font-size: 9px;
-    line-height: 1.25;
-  }
-  .destination-cue i {
-    width: 22px;
-    border-top: 1px solid rgb(255 255 255 / 48%);
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    mask-image: linear-gradient(#000 92%, transparent);
+    transition: transform 450ms ease;
   }
   .entry-number {
     position: absolute;
     z-index: 3;
-    top: 20px;
-    left: 24px;
-    color: #fff;
-    font-size: 12px;
-    text-shadow: 0 1px 5px #000;
+    top: 16px;
+    left: 18px;
+    color: #596865;
+    font-size: 11px;
   }
   .image-heading {
-    position: absolute;
-    bottom: 26px;
-    left: 26px;
-    right: 42px;
-    z-index: 3;
-    color: #fff;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 86px;
+    padding: 0 24px 24px;
+    color: var(--ink);
   }
-  .image-heading > span {
+  .image-category {
     font-size: 11px;
     font-weight: 500;
-    opacity: 0.87;
+    color: #556661;
   }
   h2 {
     margin-top: 5px;
@@ -310,13 +223,11 @@
     line-height: 1.2;
   }
   .image-arrow {
-    position: absolute;
-    z-index: 3;
-    right: 25px;
-    bottom: 30px;
-    width: 27px;
-    height: 27px;
-    color: #fff;
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 4px;
+    color: var(--entry-color);
     transition: transform 180ms ease;
   }
   .destination-copy {
@@ -359,20 +270,13 @@
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 10px;
     border-top: 1px solid var(--line);
     margin-top: 28px;
-    padding-block: 15px 22px;
+    padding-block: 12px 18px;
     color: var(--muted);
     font-size: 10px;
-  }
-  .image-caption p {
-    color: #4c5655;
-  }
-  .image-caption p span {
-    margin-left: 8px;
-    color: #737b79;
   }
   .image-credits {
     text-align: right;
@@ -387,29 +291,19 @@
     gap: 4px;
     padding-top: 8px;
   }
-  .credit-list a:hover {
-    color: var(--accent);
-  }
   @media (max-width: 1100px) {
     .destination-grid {
       gap: 18px;
     }
-    .destination-image {
-      aspect-ratio: 0.95;
-    }
     .image-heading {
-      left: 20px;
-      right: 34px;
+      padding-inline: 20px;
+      min-height: 82px;
     }
     .image-arrow {
-      right: 18px;
-      width: 21px;
+      display: none;
     }
     h2 {
-      font-size: 23px;
-    }
-    .destination-cue i {
-      width: 12px;
+      font-size: 20px;
     }
     h1 {
       font-size: 36px;
@@ -444,15 +338,17 @@
       grid-template-columns: 1fr;
       gap: 30px;
     }
-    .destination-image {
-      aspect-ratio: 1.6;
-    }
     .image-heading {
-      bottom: 21px;
-      left: 23px;
+      padding-inline: 23px;
+      min-height: 86px;
+    }
+    .image-arrow {
+      display: block;
+      width: 22px;
+      height: 22px;
     }
     h2 {
-      font-size: 26px;
+      font-size: 24px;
     }
     .destination-copy {
       padding-top: 13px;

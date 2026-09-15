@@ -1,0 +1,38 @@
+Use case: stylized-concept
+Asset type: research website destination image, landscape 1536 x 1024.
+
+Create an original, beautifully art-directed editorial still life for an
+interactive wildfire mapping platform. The main subject is ONE finely detailed
+rectangular surface of real-looking mountainous forest terrain, viewed from a
+three-quarter overhead angle approximately 35 degrees from vertical, on a cool
+near-white seamless surface. The terrain has natural green ridges, valleys,
+subtle pale roads, and a geographically coherent small wildfire region.
+
+Above the terrain, show TWO extremely thin, precisely registered translucent
+map sheets, lifted only slightly from the terrain. One carries a restrained
+vermilion fire perimeter and a handful of small observation points; the other
+carries sparse mineral-blue wind vectors. All geographic features align exactly
+across the sheets. The stack must read as map layers that can be explored, with
+the real terrain always visible. Integrate a tiny understated vertical sequence
+of three layer marks at one edge and a thin timeline tick line along another
+edge. They belong to the map composition, not floating control panels. No actual
+dates, scores, statistics, prediction claims, or fabricated live data labels.
+
+Use the terrain, precise registration, and restrained map marks to communicate
+interactive geographic analysis. Avoid a computer, monitor, tablet, browser
+window, dashboard screenshot, giant flame, dramatic smoke, sci-fi interface,
+glowing circuitry, or a collection of disconnected mini cards.
+
+Shared series treatment: diffuse daylight from the upper left; realistic matte
+materials and subtle transparent sheets; cool near-white and graphite; natural
+forest green; subtle mineral blue; small vermilion accents. Rich but restrained
+detail. The terrain and its aligned layers are the unmistakable focal object,
+occupying most of the upper three quarters. Keep all essential details within
+the central 70 percent of the width. Leave the bottom quarter visually quiet
+for HTML typography. No outer frame, rounded card, backdrop grid, neon, glossy
+plastic, shield, branding, headline, watermark, or unrelated charts. The result
+should be elegant and immediately legible at 400 pixels wide, matching the
+camera, lighting, palette, and material sophistication of a scientific journal
+still life in the same coordinated editorial series.
+
+The attached image is a STYLE REFERENCE ONLY from the same series. Match its daylight, background tone, restrained palette, matte materials, camera angle, and quality. Create the completely different main subject requested above. Do not repeat the reference journal, printed publication, or its layout. This is a new standalone image, not an edit of the reference composition.

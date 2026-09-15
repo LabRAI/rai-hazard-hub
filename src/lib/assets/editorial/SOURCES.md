@@ -1,7 +1,9 @@
 # Image Sources
 
-Portal imagery uses historical Earth observations. It does not represent current
-FireEye conditions or screenshots of the linked applications.
+The current portal uses the generated editorial illustrations documented in
+[`../portal/editorial-v3/SOURCES.md`](../portal/editorial-v3/SOURCES.md).
+This directory retains the earlier Earth observation imagery and the illustrations
+used on the Research Notes page.
 
 | Files                                                | Subject                                                                  | Source and credit                                                                                                                                                                                            |
 | ---------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -13,8 +15,8 @@ FireEye conditions or screenshots of the linked applications.
 
 Earth observation photographs are resized to 480, 960, and 1440 pixels wide and
 encoded as WebP. Their colors are unaltered. Layout crops and the lower text
-overlay are applied only in CSS. Original user-provided portal images remain in
-`../portal/` for future use.
+overlay were applied only in CSS. Original user-provided portal images remain in
+`../portal/` as archived assets.
 
 [NASA image use guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/).
 Image credits do not imply a partnership or endorsement.

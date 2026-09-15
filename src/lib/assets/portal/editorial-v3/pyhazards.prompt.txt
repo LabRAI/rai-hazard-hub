@@ -1,0 +1,40 @@
+Use case: stylized-concept
+Asset type: research website destination image, landscape 1536 x 1024.
+
+Create an original, beautifully art-directed editorial still life for a Python
+library of hazard datasets, models, and benchmarks. The main subject is a compact
+modular collection of thin scientific data tiles, viewed from a three-quarter
+overhead angle approximately 35 degrees from vertical, on a cool near-white
+seamless surface. The composition must unmistakably suggest a reusable software
+library, with one precise readable Python statement: "import pyhazards".
+
+Place that statement on a slim graphite source-code plate tilted in the same
+perspective as the other objects. Use clean small monospace typography: "import"
+in a muted mineral blue and "pyhazards" in near-white. This plate is an integrated
+part of the scientific object arrangement, without an operating-system frame,
+browser chrome, traffic-light buttons, terminal prompt, screenshot, or fake app UI.
+
+In front of and closely connected to the code plate, arrange THREE aligned
+reusable data tiles as a calm compact modular set. One contains forest terrain
+with a restrained red fire perimeter, one a river and floodplain, and one a
+natural spiral cloud pattern. Each uses the same thin matte substrate and the
+same scale; use subtle aligned registration notches to convey interchangeability.
+The tiles should be realistic geographic imagery held within precise scientific
+modules, not toy dioramas, floating neon cubes, disaster icons, or collectible
+game pieces. A very small indexed reference leaf can sit behind the code plate,
+with only "API" readable, hinting at documentation. No other generated text.
+
+Shared series treatment: diffuse daylight from the upper left; realistic matte
+materials; cool near-white and graphite; natural forest green; subtle mineral
+blue; small vermilion accents. Rich but restrained detail. The code plate and
+the modular data set form ONE coherent focal arrangement, occupying most of the
+upper three quarters. Keep all essential details within the central 70 percent
+of the width. Leave the bottom quarter visually quiet for HTML typography. No
+outer frame, rounded card, backdrop grid, neon, glossy plastic, shield, lightning
+logo, central badge, giant letters, decorative connector network, branding,
+headline, watermark, or unrelated charts. The result should be elegant and
+immediately legible at 400 pixels wide, matching the camera, lighting, palette,
+and material sophistication of the journal and geographic map images in the
+same coordinated scientific editorial series.
+
+The attached image is a STYLE REFERENCE ONLY from the same series. Match its daylight, background tone, restrained palette, matte materials, camera angle, and quality. Create the completely different main subject requested above. Do not repeat the reference journal, printed publication, or its layout. This is a new standalone image, not an edit of the reference composition.

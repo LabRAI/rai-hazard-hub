@@ -21,12 +21,15 @@ Open `http://localhost:5175/`. When using a remote workspace, forward port 5175.
 
 ## Design and imagery
 
-The portal uses three Earth observation images for Research Notes, FireEye, and
+The portal uses three coordinated editorial illustrations: an open publication
+for Research Notes, geographic layers for FireEye, and Python data modules for
 PyHazards. Research Notes presents the two studies with expandable illustrations.
 The shared header and footer live in `src/lib/components/SiteHeader.svelte` and
 `src/lib/components/SiteFooter.svelte`.
 
-Image provenance is documented in
+Portal image provenance and generation prompts are documented in
+[`src/lib/assets/portal/editorial-v3/SOURCES.md`](src/lib/assets/portal/editorial-v3/SOURCES.md).
+Research illustrations and archived photographs are documented in
 [`src/lib/assets/editorial/SOURCES.md`](src/lib/assets/editorial/SOURCES.md).
 Original uploaded images remain in `src/lib/assets/portal/` and
 `src/lib/assets/researchNotes/`. Inter is served locally with its font license.

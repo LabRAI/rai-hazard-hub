@@ -1,0 +1,32 @@
+Use case: stylized-concept
+Asset type: research website destination image, landscape 1536 x 1024.
+
+Create an original, beautifully art-directed editorial still life for a collection
+of readable wildfire research articles. The main subject is ONE open contemporary
+research journal, photographed from a three-quarter overhead angle approximately
+35 degrees from vertical, on a cool near-white seamless surface. Give the journal
+convincing thin matte paper, a subtle central fold, and soft contact shadows.
+
+The spread must immediately read as a publication to browse: a generous landscape
+photograph of forested terrain and a small wildfire plume on the left page; a
+restrained article layout on the right page with two narrow text columns, one
+small red section marker, and one carefully integrated scientific map figure.
+Only the short printed word "RESEARCH" needs to be readable; body text should
+recede naturally at this scale. No equations, mathematics, network diagrams,
+notebook, laptop, pen, fabricated numerical results, or piles of loose documents.
+
+Let the terrain image have photographic depth and tactile detail, while remaining
+printed inside the page. It must feel like a considered science publication,
+with a clear relationship between image and text. It must not look like a website
+screenshot pasted onto a sheet or a generic analytics dashboard.
+
+Shared series treatment: diffuse daylight from the upper left; realistic matte
+materials; cool near-white and graphite; natural forest green; subtle mineral
+blue; one small vermilion accent. Rich but restrained detail. The open journal is
+the unmistakable focal object and occupies most of the upper three quarters.
+Keep all essential details within the central 70 percent of the width. Leave
+the bottom quarter visually quiet for HTML typography. No outer frame, rounded
+card, backdrop grid, neon, glossy plastic, shield, branding, headline, watermark,
+or extra decorative objects. The result should be elegant and immediately
+legible at 400 pixels wide, like the first image of a coordinated museum-quality
+scientific editorial series.
