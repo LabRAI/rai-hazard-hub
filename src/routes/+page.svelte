@@ -9,9 +9,9 @@
   import researchNotesImage from "$lib/assets/portal/editorial-v4/research-notes-1536.webp";
   import researchNotesSmall from "$lib/assets/portal/editorial-v4/research-notes-480.webp";
   import researchNotesMedium from "$lib/assets/portal/editorial-v4/research-notes-960.webp";
-  import fireeyeImage from "$lib/assets/portal/editorial-v4/fireeye-1536.webp";
-  import fireeyeSmall from "$lib/assets/portal/editorial-v4/fireeye-480.webp";
-  import fireeyeMedium from "$lib/assets/portal/editorial-v4/fireeye-960.webp";
+  import fireeyeImage from "$lib/assets/portal/editorial-v5/fireeye-forecast-1536.webp";
+  import fireeyeSmall from "$lib/assets/portal/editorial-v5/fireeye-forecast-480.webp";
+  import fireeyeMedium from "$lib/assets/portal/editorial-v5/fireeye-forecast-960.webp";
   import pyhazardsImage from "$lib/assets/portal/editorial-v4/pyhazards-1536.webp";
   import pyhazardsSmall from "$lib/assets/portal/editorial-v4/pyhazards-480.webp";
   import pyhazardsMedium from "$lib/assets/portal/editorial-v4/pyhazards-960.webp";
@@ -34,10 +34,10 @@
       color: "#356a57",
     },
     {
-      category: "Interactive platform",
+      category: "Interactive forecast map",
       title: "RAI FireEye",
       description:
-        "An interactive wildfire intelligence platform for observations, layers, and forecasts.",
+        "Explore 12-48 hour wildfire risk forecasts alongside environmental data.",
       href: "https://rai-fire.com/",
       action: "Open FireEye",
       external: true,
@@ -45,7 +45,7 @@
       small: fireeyeSmall,
       medium: fireeyeMedium,
       imagePosition: "center",
-      alt: "An illustrated wildfire map fills the view with mountain terrain, a fire perimeter, observation points, and wind overlays.",
+      alt: "FireEye wildfire forecast map with colored risk cells over western U.S. terrain and a 12-to-48-hour forecast timeline.",
       color: "#ad4739",
     },
     {

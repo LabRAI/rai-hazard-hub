@@ -1,0 +1,10 @@
+Use case: precise-object-edit
+Edit target: The attached newly generated FireEye forecast map.
+
+Refine ONLY the top title strip and bottom forecast timeline for legibility as a 437px-wide portal image. Keep the exact map composition, coast, topography, natural color palette, gridded forecast risk clusters, small crosshair and photographic matte texture unchanged. Keep the image at 1536 x 1024. Do not zoom out, change the geographic view, introduce flames, or add interface panels.
+
+The current title strip is too thin. Make the edge-to-edge matte charcoal strip 100 pixels high, with vertically centered text and comfortable padding above and below. Preserve the exact single-line text "FireEye / Wildfire forecast". Increase its font size to approximately 52 pixels, using precise attractive understated lettering; FireEye medium weight, slash a restrained vermilion, Wildfire forecast regular white. Keep all text inside x=160 to x=1370 for the centered 4:3 crop. This top strip should feel like the slim header of an elegant cartographic instrument, not a banner advertisement.
+
+Keep the bottom timeline in the same location and style, with geographic texture visible underneath. Increase the four exact labels "+12h", "+24h", "+36h", "+48h" to approximately 34 pixels for clear thumbnail reading. Keep the four markers and the subtle +24h red underline. Place labels and markers inside x=180 to x=1356, with comfortable spacing above the bottom edge. Do not add any other text.
+
+Everything outside these two typography refinements must remain as in the reference. Preserve the full-bleed map; no whitespace, no margins, no decorative frame or added logo, no screenshot collage.

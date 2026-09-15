@@ -1,0 +1,25 @@
+{
+  "site": "https://image.suqis.com/",
+  "endpoint": "https://api.vvvcode.com/v1",
+  "requestedModel": "gpt-image-2",
+  "requestedSize": "1536x1024",
+  "requestedQuality": "high",
+  "reference": "pyhazards.png",
+  "date": "2026-09-15T14:03:07.558Z",
+  "responseStatus": 200,
+  "generatedImages": 1,
+  "responseModel": "gpt-image-2-codex",
+  "usage": {
+    "input_tokens": 2450,
+    "input_tokens_details": {
+      "image_tokens": 1536,
+      "text_tokens": 914
+    },
+    "output_tokens": 1372,
+    "output_tokens_details": {
+      "image_tokens": 1372,
+      "text_tokens": 0
+    },
+    "total_tokens": 3822
+  }
+}

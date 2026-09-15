@@ -22,7 +22,7 @@ Open `http://localhost:5175/`. When using a remote workspace, forward port 5175.
 ## Design and imagery
 
 The portal uses three coordinated editorial illustrations with close framing:
-a publication for Research Notes, geographic layers for FireEye, and Python data
+a publication for Research Notes, a forecast map for FireEye, and Python data
 modules for PyHazards. Titles sit below the artwork. Research Notes presents the
 two studies with expandable illustrations.
 The homepage and Research Notes share a 1360px maximum content width. The homepage
@@ -35,7 +35,11 @@ dialogs with their study names and captions.
 The shared header and footer live in `src/lib/components/SiteHeader.svelte` and
 `src/lib/components/SiteFooter.svelte`.
 
-Portal image provenance and generation prompts are documented in
+The FireEye illustration uses geographic probability cells, a short forecast
+label, and 12/24/36/48-hour timeline cues based on the actual platform.
+Its provenance and exact generation prompt are documented in
+[`src/lib/assets/portal/editorial-v5/SOURCES.md`](src/lib/assets/portal/editorial-v5/SOURCES.md).
+Research Notes and PyHazards portal image sources are documented in
 [`src/lib/assets/portal/editorial-v4/SOURCES.md`](src/lib/assets/portal/editorial-v4/SOURCES.md).
 Research illustrations and archived photographs are documented in
 [`src/lib/assets/editorial/SOURCES.md`](src/lib/assets/editorial/SOURCES.md).
