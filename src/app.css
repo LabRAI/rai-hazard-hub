@@ -47,7 +47,7 @@
   outline-offset: 5px;
 }
 .hub-site .site-width {
-  width: min(1248px, calc(100% - 80px));
+  width: min(var(--site-max-width, 1248px), calc(100% - 80px));
   margin-inline: auto;
 }
 .hub-site .eyebrow {

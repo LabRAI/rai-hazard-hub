@@ -29,6 +29,7 @@
       image: researchNotesImage,
       small: researchNotesSmall,
       medium: researchNotesMedium,
+      imagePosition: "70% center",
       alt: "A close view of an illustrated research journal, with wildfire imagery across one page and an article and map on the other.",
       color: "#356a57",
     },
@@ -43,6 +44,7 @@
       image: fireeyeImage,
       small: fireeyeSmall,
       medium: fireeyeMedium,
+      imagePosition: "center",
       alt: "An illustrated wildfire map fills the view with mountain terrain, a fire perimeter, observation points, and wind overlays.",
       color: "#ad4739",
     },
@@ -57,6 +59,7 @@
       image: pyhazardsImage,
       small: pyhazardsSmall,
       medium: pyhazardsMedium,
+      imagePosition: "left center",
       alt: "The Python statement import pyhazards appears above closely joined wildfire, floodplain, and cyclone data imagery.",
       color: "#326f89",
     },
@@ -71,7 +74,7 @@
   />
 </svelte:head>
 
-<div class="hub-site">
+<div class="hub-site hub-home">
   <SiteHeader />
   <main id="main-content">
     <section class="portal-intro site-width" aria-labelledby="portal-title">
@@ -91,7 +94,8 @@
                 <img
                   src={entry.image}
                   srcset={`${entry.small} 480w, ${entry.medium} 960w, ${entry.image} 1536w`}
-                  sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) calc((100vw - 116px) / 3), (max-width: 1328px) calc((100vw - 128px) / 3), 400px"
+                  sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) calc((100vw - 116px) / 3), (max-width: 1440px) calc((100vw - 128px) / 3), 438px"
+                  style:object-position={entry.imagePosition}
                   alt={entry.alt}
                   width="1536"
                   height="1024"
@@ -137,6 +141,9 @@
 </div>
 
 <style>
+  .hub-home {
+    --site-max-width: 1360px;
+  }
   .portal-intro {
     padding-block: 42px 34px;
     text-align: center;
@@ -182,7 +189,7 @@
     display: block;
     width: 100%;
     height: auto;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
     transition: transform 450ms ease;
   }
@@ -302,6 +309,9 @@
     }
   }
   @media (max-width: 700px) {
+    .destination-image img {
+      aspect-ratio: 3 / 2;
+    }
     .portal-intro {
       padding-block: 30px 28px;
     }
