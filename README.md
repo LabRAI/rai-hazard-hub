@@ -26,8 +26,10 @@ a publication for Research Notes, a forecast map for FireEye, and Python data
 modules for PyHazards. Titles sit below the artwork. Research Notes presents the
 two studies with expandable illustrations.
 The homepage and Research Notes share a 1360px maximum content width. The homepage
-uses 4:3 artwork on desktop, with individual crop positions to preserve each
-subject; mobile keeps the full 3:2 artwork. Research Notes pairs serif article
+uses 4:3 image frames on desktop and 3:2 frames on mobile, with individual crop
+positions to preserve each subject. All three frames have equal-height charcoal
+labels rendered as webpage text; the embedded title strips are removed from
+the FireEye and PyHazards image derivatives. Research Notes pairs serif article
 titles with Inter body text, a study overview beside the introduction, and a
 supporting illustration beside the key findings. Tablet and mobile layouts
 rearrange these elements for reading, and all four figures open in accessible
@@ -35,8 +37,10 @@ dialogs with their study names and captions.
 The shared header and footer live in `src/lib/components/SiteHeader.svelte` and
 `src/lib/components/SiteFooter.svelte`.
 
-The FireEye illustration uses geographic probability cells, a short forecast
-label, and 12/24/36/48-hour timeline cues based on the actual platform.
+The shared-label image preparation and rollback point are documented in
+[`src/lib/assets/portal/unified-labels/SOURCES.md`](src/lib/assets/portal/unified-labels/SOURCES.md).
+The FireEye illustration uses geographic probability cells and 12/24/36/48-hour
+timeline cues based on the actual platform.
 Its provenance and exact generation prompt are documented in
 [`src/lib/assets/portal/editorial-v5/SOURCES.md`](src/lib/assets/portal/editorial-v5/SOURCES.md).
 Research Notes and PyHazards portal image sources are documented in

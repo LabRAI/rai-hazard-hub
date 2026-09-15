@@ -9,12 +9,12 @@
   import researchNotesImage from "$lib/assets/portal/editorial-v4/research-notes-1536.webp";
   import researchNotesSmall from "$lib/assets/portal/editorial-v4/research-notes-480.webp";
   import researchNotesMedium from "$lib/assets/portal/editorial-v4/research-notes-960.webp";
-  import fireeyeImage from "$lib/assets/portal/editorial-v5/fireeye-forecast-1536.webp";
-  import fireeyeSmall from "$lib/assets/portal/editorial-v5/fireeye-forecast-480.webp";
-  import fireeyeMedium from "$lib/assets/portal/editorial-v5/fireeye-forecast-960.webp";
-  import pyhazardsImage from "$lib/assets/portal/editorial-v4/pyhazards-1536.webp";
-  import pyhazardsSmall from "$lib/assets/portal/editorial-v4/pyhazards-480.webp";
-  import pyhazardsMedium from "$lib/assets/portal/editorial-v4/pyhazards-960.webp";
+  import fireeyeImage from "$lib/assets/portal/unified-labels/fireeye-1536.webp";
+  import fireeyeSmall from "$lib/assets/portal/unified-labels/fireeye-480.webp";
+  import fireeyeMedium from "$lib/assets/portal/unified-labels/fireeye-960.webp";
+  import pyhazardsImage from "$lib/assets/portal/unified-labels/pyhazards-1536.webp";
+  import pyhazardsSmall from "$lib/assets/portal/unified-labels/pyhazards-480.webp";
+  import pyhazardsMedium from "$lib/assets/portal/unified-labels/pyhazards-960.webp";
   import { withBase } from "$lib/paths";
 
   const entries = [
@@ -29,6 +29,13 @@
       image: researchNotesImage,
       small: researchNotesSmall,
       medium: researchNotesMedium,
+      imageHeight: 1024,
+      imageLabel: {
+        prefix: "Research",
+        detail: "notes",
+        separator: "",
+        code: false,
+      },
       imagePosition: "70% center",
       alt: "A close view of an illustrated research journal, with wildfire imagery across one page and an article and map on the other.",
       color: "#356a57",
@@ -44,7 +51,14 @@
       image: fireeyeImage,
       small: fireeyeSmall,
       medium: fireeyeMedium,
-      imagePosition: "center",
+      imageHeight: 940,
+      imageLabel: {
+        prefix: "FireEye",
+        detail: "Wildfire forecast",
+        separator: "/",
+        code: false,
+      },
+      imagePosition: "center bottom",
       alt: "FireEye wildfire forecast map with colored risk cells over western U.S. terrain and a 12-to-48-hour forecast timeline.",
       color: "#ad4739",
     },
@@ -59,7 +73,14 @@
       image: pyhazardsImage,
       small: pyhazardsSmall,
       medium: pyhazardsMedium,
-      imagePosition: "left center",
+      imageHeight: 868,
+      imageLabel: {
+        prefix: "import",
+        detail: "pyhazards",
+        separator: "",
+        code: true,
+      },
+      imagePosition: "center",
       alt: "The Python statement import pyhazards appears above closely joined wildfire, floodplain, and cyclone data imagery.",
       color: "#326f89",
     },
@@ -91,16 +112,29 @@
           <article class="destination" style={`--entry-color: ${entry.color}`}>
             <a class="destination-link" href={entry.href}>
               <div class="destination-image">
-                <img
-                  src={entry.image}
-                  srcset={`${entry.small} 480w, ${entry.medium} 960w, ${entry.image} 1536w`}
-                  sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) calc((100vw - 116px) / 3), (max-width: 1440px) calc((100vw - 128px) / 3), 438px"
-                  style:object-position={entry.imagePosition}
-                  alt={entry.alt}
-                  width="1536"
-                  height="1024"
-                  fetchpriority="high"
-                />
+                <span
+                  class="image-label"
+                  class:code-label={entry.imageLabel.code}
+                  aria-hidden="true"
+                >
+                  <span class="label-prefix">{entry.imageLabel.prefix}</span>
+                  {#if entry.imageLabel.separator}<span class="label-separator"
+                      >{entry.imageLabel.separator}</span
+                    >{/if}
+                  <span>{entry.imageLabel.detail}</span>
+                </span>
+                <div class="destination-artwork">
+                  <img
+                    src={entry.image}
+                    srcset={`${entry.small} 480w, ${entry.medium} 960w, ${entry.image} 1536w`}
+                    sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1100px) calc((100vw - 116px) / 3), (max-width: 1440px) calc((100vw - 128px) / 3), 438px"
+                    style:object-position={entry.imagePosition}
+                    alt={entry.alt}
+                    width="1536"
+                    height={entry.imageHeight}
+                    fetchpriority="high"
+                  />
+                </div>
               </div>
               <div class="image-heading">
                 <div>
@@ -180,16 +214,48 @@
   }
   .destination-image {
     position: relative;
+    display: grid;
+    grid-template-rows: 34px minmax(0, 1fr);
+    aspect-ratio: 4 / 3;
     isolation: isolate;
     overflow: hidden;
     border-radius: 5px;
     background: var(--wash);
   }
+  .image-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 0;
+    padding-inline: 12px;
+    background: #2d3030;
+    color: #f3f5f4;
+    font-size: 14px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .label-prefix {
+    font-weight: 600;
+  }
+  .label-separator {
+    color: #e9927c;
+  }
+  .code-label {
+    font-family:
+      ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  }
+  .code-label .label-prefix {
+    color: #8fc1e1;
+  }
+  .destination-artwork {
+    min-height: 0;
+    overflow: hidden;
+  }
   .destination-image img {
     display: block;
     width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
+    height: 100%;
     object-fit: cover;
     transition: transform 450ms ease;
   }
@@ -283,6 +349,11 @@
     padding-top: 8px;
   }
   @media (max-width: 1100px) {
+    .image-label {
+      font-size: 12px;
+      gap: 5px;
+      padding-inline: 8px;
+    }
     .destination-grid {
       gap: 18px;
     }
@@ -309,8 +380,13 @@
     }
   }
   @media (max-width: 700px) {
-    .destination-image img {
+    .destination-image {
       aspect-ratio: 3 / 2;
+    }
+    .image-label {
+      font-size: 14px;
+      gap: 6px;
+      padding-inline: 12px;
     }
     .portal-intro {
       padding-block: 30px 28px;
