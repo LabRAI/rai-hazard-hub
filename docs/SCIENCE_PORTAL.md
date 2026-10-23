@@ -1,10 +1,12 @@
-# Super Intelligence for Science Research Hub
+# Super Intelligence for Research Hub at FSU
 
 An additional version of the RAI portal, implemented on 2026-10-22.
 
 ## Pages and boundaries
 
-- `/science/`: Research Notes, Hazard Intelligence Hub, Health Intelligence Hub.
+- `/science/`: News and Trending Product, followed by Hazard and Health
+  Intelligence Hubs. News leads to Research Notes; RAI FireEye is the featured
+  product. The `#research-hubs` anchor targets the domain sections, not News.
 - Each intelligence hub has a wide research-film area followed by resources;
   Research Notes is always the first resource.
 - `/science/team/`: automatically generated lab directory.
@@ -21,6 +23,16 @@ The Health platform URL and both videos have not been supplied. Their config
 values remain `null`. No fake destinations, example films, or inert play buttons
 are shown. EpiGraph is an actual public research project, not a substitute URL
 for the unconfirmed Health platform. Health Research Notes are explicitly pending.
+
+## Homepage editorial content
+
+Edit `news` in `src/lib/science/content.ts` to update the homepage stories.
+Keep entries newest first and link each one to a real article. The initial two
+stories summarize the existing June and May 2026 papers; the dates are paper
+dates, not invented publication announcements.
+
+Trending Product currently features RAI FireEye. It is an editorial selection,
+not an analytics-based ranking; no traffic or popularity figures are claimed.
 
 ## Add or remove team members
 
@@ -134,6 +146,8 @@ The Pages preview path is `https://labrai.github.io/rai-hazard-hub/science/`.
 ## Rollback
 
 Baseline tag: `hub-before-science-portal-2026-10-22` at `aebd1bb`.
+The science preview before the News/Trending revision is also preserved as
+`science-before-news-trending-c0aab89` at `c0aab89`.
 The original site is preserved in place, so visitors can continue using it.
 Reverting the science-portal commit removes the added version; do not reset
 unrelated later work or alter the separately hosted FireEye server.
@@ -152,7 +166,7 @@ outside this change.
 - Content tests: six passing tests for videos, destinations, profile metadata,
   photo naming, hub order, and checked-in content.
 - Production build: passes with the real `/rai-hazard-hub` base path.
-- Chromium: 320, 390, 820, 1440, and 1920 px viewports pass with no horizontal
+- Chromium: 320, 390, 700, 820, 1024, 1440, and 1920 px viewports pass with no horizontal
   overflow, missing images, overlapping film labels, or browser runtime errors.
 - Verified the team directory, all nine profile routes, the original routes,
   and the new Research Notes route; Research Notes is first in both hub rows.
@@ -164,3 +178,17 @@ outside this change.
   a claim of full accessibility certification.
 - Naming check: 112 source/documentation/build text files scanned, no matches.
 - Review screenshots are saved in `/home/shared/Hub_page/science-preview-2026-10-22/`.
+
+### News / Trending Product revision
+
+- The visible heading, page metadata, and home-link accessible label use
+  **Super Intelligence for Research Hub at FSU**.
+- Desktop News contains two illustrated stories; Trending Product features
+  FireEye. The artwork aligns across the row and preserves the full images.
+- Story links target the corresponding Research Notes articles. Research Hubs
+  navigation targets the lower Hazard and Health sections.
+- The original Hazard homepage, notes content, team data, and hub product order
+  are unchanged.
+- Browser checks cover the official title, dates, news anchors, FireEye link,
+  navigation, responsive image alignment, and existing profile routes. Axe
+  checks cover the revised homepage at 1440 and 390 px.

@@ -12,10 +12,38 @@ import health from "$lib/assets/science/health-1800.webp";
 import healthSmall from "$lib/assets/science/health-480.webp";
 import healthMedium from "$lib/assets/science/health-960.webp";
 import hazardPoster from "$lib/assets/editorial/wildfire-1440.webp";
+import wildfireFm from "$lib/assets/editorial/wildfire-fm-card.webp";
+import wildfireIa from "$lib/assets/editorial/wildfire-ia-card.webp";
 
-export const scienceTitle = "Super Intelligence for Science Research Hub";
+export const scienceTitle = "Super Intelligence for Research Hub at FSU";
 export const scienceDescription =
   "Research, platforms, and open tools for AI-powered discovery across hazards and human health.";
+export const news = [
+  {
+    id: "wildfire-ia",
+    title: "Which wildfires escape the first response?",
+    category: "Data & benchmarks",
+    date: "June 2026",
+    datetime: "2026-06",
+    description:
+      "A nationwide benchmark examines what public environmental data can tell us when a fire is first discovered.",
+    href: "/science/research-notes/#wildfire-ia",
+    image: wildfireIa,
+    alt: "Illustration of the Wildfire Initial Attack benchmark, connecting public data, fire locations, and discovery-time risk.",
+  },
+  {
+    id: "wildfire-fm",
+    title: "A strong score. A reliable wildfire forecast?",
+    category: "Models & evaluation",
+    date: "May 2026",
+    datetime: "2026-05",
+    description:
+      "Wildfire-FM asks how evaluation choices change what a forecast's performance really tells us.",
+    href: "/science/research-notes/#wildfire-fm",
+    image: wildfireFm,
+    alt: "Illustration of environmental observations flowing into Wildfire-FM and different forecast evaluation tasks.",
+  },
+];
 export type Artwork = {
   src: string;
   srcset: string;

@@ -14,7 +14,7 @@ Live URL:
 - `/science/research-notes/` approved articles within the science navigation
 
 The original Hazard homepage and Research Notes are unchanged. The new version
-is titled **Super Intelligence for Science Research Hub** and adapts FSU's
+is titled **Super Intelligence for Research Hub at FSU** and adapts FSU's
 official Strata 3.3.15 header/footer template. See
 [`docs/SCIENCE_PORTAL.md`](docs/SCIENCE_PORTAL.md) for content, team-photo,
 video, source, deployment, and rollback instructions. The preview is marked

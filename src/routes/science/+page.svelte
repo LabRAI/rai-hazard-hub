@@ -10,40 +10,12 @@
   import {
     art,
     hubs,
+    news,
     posters,
     scienceTitle,
     scienceDescription,
   } from "$lib/science/content";
   import { withBase } from "$lib/paths";
-  const doors = [
-    {
-      title: "Research Notes",
-      category: "Ideas & discoveries",
-      description:
-        "A closer look at the questions, evidence, and people behind the research.",
-      href: withBase("/science/research-notes/"),
-      action: "Read the research",
-      image: art.notes,
-    },
-    {
-      title: "Hazard Intelligence Hub",
-      category: "AI for the environment",
-      description:
-        "Forecasting wildfire risk. Understanding hazards. Building resilience.",
-      href: "#hazard",
-      action: "Explore the hub",
-      image: art.fireeye,
-    },
-    {
-      title: "Health Intelligence Hub",
-      category: "AI for human health",
-      description:
-        "Connecting clinical evidence and AI to advance health research.",
-      href: "#health",
-      action: "Explore the research",
-      image: art.health,
-    },
-  ];
 </script>
 
 <svelte:head>
@@ -59,100 +31,134 @@
   <section class="science-width masthead" aria-labelledby="science-title">
     <p class="section-kicker">Responsible AI Lab · Florida State University</p>
     <h1 id="science-title" class="editorial-title">
-      Super Intelligence<br /><span>for Science Research Hub</span>
+      Super Intelligence<br /><span>for Research Hub at FSU</span>
     </h1>
     <p class="masthead-description">
       Research, platforms, and open tools for a world of scientific questions.
     </p>
   </section>
 
-  <section
-    id="research-hubs"
-    class="science-width doorway-section"
-    aria-label="Explore research notes and intelligence hubs"
-  >
-    <div class="doorway-grid">
-      {#each doors as door, index}
-        <article class="doorway">
-          <a href={door.href}>
-            <div class="doorway-art">
-              <img
-                src={door.image.src}
-                srcset={door.image.srcset}
-                sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1400px) calc((100vw - 128px) / 3), 424px"
-                alt={door.image.alt}
-                style:object-position={door.image.position}
-                width="1536"
-                height="1024"
-                fetchpriority={index === 0 ? "high" : "auto"}
-              />
-            </div>
-            <div class="doorway-copy">
-              <p class="section-kicker">{door.category}</p>
-              <h2 class="editorial-title">{door.title}</h2>
-              <p class="doorway-description">{door.description}</p>
-              <span class="doorway-action"
-                >{door.action}<ArrowRightOutline /></span
-              >
-            </div>
-          </a>
-        </article>
-      {/each}
-    </div>
-    <div class="directory-caption">
-      <span>From research questions to usable tools.</span><span
-        >Explore our intelligence hubs <span aria-hidden="true">↓</span></span
-      >
-    </div>
-  </section>
-
-  {#each hubs as hub, index}
-    <section
-      id={hub.id}
-      class="hub-section"
-      class:health-section={hub.id === "health"}
-      aria-labelledby={`${hub.id}-title`}
-    >
-      <div class="science-width">
-        <div class="hub-divider">
-          <span class="hub-index">{String(index + 1).padStart(2, "0")}</span>
-          <p class="section-kicker">{hub.eyebrow}</p>
-          <span class="divider-line"></span>
-        </div>
-        <div class="hub-heading">
-          <div>
-            <h2 id={`${hub.id}-title`} class="editorial-title">{hub.name}</h2>
-            <p>{hub.description}</p>
-          </div>
-          {#if hub.platformUrl}<a
-              class="editorial-link"
-              href={withBase(hub.platformUrl)}
-              >Open {hub.name.replace(" Intelligence", "")}
-              <ArrowRightOutline /></a
-            >{:else}<span class="hub-status">Platform details forthcoming</span
-            >{/if}
-        </div>
-        <HubFilm
-          title={hub.filmTitle}
-          description={hub.filmDescription}
-          youtubeUrl={hub.youtubeUrl}
-          poster={posters[hub.id]}
-          theme={hub.id}
-        />
-        <div class="product-heading">
-          <p class="section-kicker">Research & resources</p>
-          <span
-            >{hub.id === "health"
-              ? "Explore the work behind the hub"
-              : "Read. Explore. Build."}</span
-          >
-        </div>
-        <div class="product-grid">
-          {#each hub.products as product}<ProductCard {product} />{/each}
-        </div>
+  <div class="science-width frontpage-grid">
+    <section class="news-section" aria-labelledby="news-title">
+      <div class="frontpage-heading">
+        <h2 id="news-title" class="editorial-title">News</h2>
+        <a class="editorial-link" href={withBase("/science/research-notes/")}
+          >Research Notes <ArrowRightOutline /></a
+        >
+      </div>
+      <div class="news-grid">
+        {#each news as story}
+          <article class="news-story">
+            <a class="story-link" href={withBase(story.href)}>
+              <div class="frontpage-art">
+                <img
+                  src={story.image}
+                  alt={story.alt}
+                  width="1672"
+                  height="941"
+                />
+              </div>
+              <div class="story-copy">
+                <div class="story-meta">
+                  <span>{story.category}</span>
+                  <time datetime={story.datetime}>{story.date}</time>
+                </div>
+                <h3 class="editorial-title">{story.title}</h3>
+                <p class="story-description">{story.description}</p>
+                <span class="story-action"
+                  >Read the story <ArrowRightOutline /></span
+                >
+              </div>
+            </a>
+          </article>
+        {/each}
       </div>
     </section>
-  {/each}
+
+    <section class="trending-section" aria-labelledby="trending-title">
+      <div class="frontpage-heading">
+        <h2 id="trending-title" class="editorial-title">Trending Product</h2>
+      </div>
+      <article class="featured-product">
+        <a class="story-link" href="https://rai-fire.com/">
+          <div class="frontpage-art">
+            <img
+              src={art.fireeye.src}
+              srcset={art.fireeye.srcset}
+              sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 1000px) calc((100vw - 112px) / 2), (max-width: 1400px) calc((100vw - 128px) / 3), 424px"
+              alt={art.fireeye.alt}
+              style:object-position={art.fireeye.position}
+              width="1536"
+              height="1024"
+              fetchpriority="high"
+            />
+          </div>
+          <div class="story-copy">
+            <p class="story-meta">Interactive wildfire forecasting</p>
+            <h3 class="editorial-title">RAI FireEye</h3>
+            <p class="story-description">
+              Explore wildfire risk forecasts alongside weather and
+              environmental conditions on an interactive map.
+            </p>
+            <span class="story-action"
+              >Explore FireEye <ArrowUpRightFromSquareOutline /></span
+            >
+          </div>
+        </a>
+      </article>
+    </section>
+  </div>
+
+  <section id="research-hubs" aria-label="Research hubs">
+    {#each hubs as hub, index}
+      <section
+        id={hub.id}
+        class="hub-section"
+        class:health-section={hub.id === "health"}
+        aria-labelledby={`${hub.id}-title`}
+      >
+        <div class="science-width">
+          <div class="hub-divider">
+            <span class="hub-index">{String(index + 1).padStart(2, "0")}</span>
+            <p class="section-kicker">{hub.eyebrow}</p>
+            <span class="divider-line"></span>
+          </div>
+          <div class="hub-heading">
+            <div>
+              <h2 id={`${hub.id}-title`} class="editorial-title">{hub.name}</h2>
+              <p>{hub.description}</p>
+            </div>
+            {#if hub.platformUrl}<a
+                class="editorial-link"
+                href={withBase(hub.platformUrl)}
+                >Open {hub.name.replace(" Intelligence", "")}
+                <ArrowRightOutline /></a
+              >{:else}<span class="hub-status"
+                >Platform details forthcoming</span
+              >{/if}
+          </div>
+          <HubFilm
+            title={hub.filmTitle}
+            description={hub.filmDescription}
+            youtubeUrl={hub.youtubeUrl}
+            poster={posters[hub.id]}
+            theme={hub.id}
+          />
+          <div class="product-heading">
+            <p class="section-kicker">Research & resources</p>
+            <span
+              >{hub.id === "health"
+                ? "Explore the work behind the hub"
+                : "Read. Explore. Build."}</span
+            >
+          </div>
+          <div class="product-grid">
+            {#each hub.products as product}<ProductCard {product} />{/each}
+          </div>
+        </div>
+      </section>
+    {/each}
+  </section>
 
   <section
     id="about"
@@ -201,7 +207,7 @@
 <style>
   .masthead {
     text-align: center;
-    padding-block: 38px 34px;
+    padding-block: 30px 28px;
   }
   h1 {
     font-size: 52px;
@@ -215,53 +221,109 @@
     font-size: 14px;
     color: var(--muted);
   }
-  .doorway-grid,
   .product-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 26px;
   }
-  .doorway {
+  .frontpage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--line);
+  }
+  .frontpage-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    min-height: 48px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #782f40;
+  }
+  .frontpage-heading h2 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  .frontpage-heading .editorial-link {
+    font-size: 12px;
+  }
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+  }
+  .news-section,
+  .trending-section {
     min-width: 0;
   }
-  .doorway a {
+  .news-section {
+    grid-column: span 2;
+  }
+  .trending-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .featured-product {
+    flex: 1;
+  }
+  .story-link {
     color: var(--ink);
     display: flex;
     flex-direction: column;
     height: 100%;
   }
-  .doorway-art {
-    aspect-ratio: 4 / 3;
+  .frontpage-art {
+    aspect-ratio: 3 / 2;
     overflow: hidden;
-    background: #edf0ed;
+    background: #faf9f6;
   }
-  .doorway-art img {
+  .frontpage-art img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.35s ease;
   }
-  .doorway a:hover img {
+  .story-link:hover img {
     transform: scale(1.025);
   }
-  .doorway-copy {
+  .story-copy {
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding-top: 20px;
+    padding-top: 17px;
   }
-  .doorway h2 {
-    font-size: 28px;
+  .story-meta {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    color: #782f40;
+    font-size: 11px;
+    font-weight: 550;
+    line-height: 1.5;
+  }
+  .story-meta time {
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .story-copy h3 {
+    font-size: 25px;
     line-height: 1.25;
-    margin-block: 6px 10px !important;
+    margin-block: 9px 12px !important;
   }
-  .doorway-description {
+  .featured-product h3 {
+    font-size: 32px;
+  }
+  .story-description {
     color: var(--muted);
     font-size: 13px;
     line-height: 1.7;
-    max-width: 370px;
   }
-  .doorway-action {
+  .story-action {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -270,26 +332,17 @@
     font-size: 12px;
     font-weight: 600;
   }
-  .doorway-action :global(svg) {
+  .story-action :global(svg) {
     width: 17px;
     height: 17px;
   }
-  .doorway a:hover .doorway-action {
+  .story-link:hover .story-action,
+  .story-link:hover h3 {
     color: #782f40;
   }
-  .directory-caption {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    margin-top: 27px;
-    padding-block: 17px;
-    border-top: 1px solid var(--line);
-    font-size: 11px;
-    color: var(--muted);
-  }
-  .directory-caption span span {
-    margin-left: 10px;
+  .story-link:focus-visible {
+    outline: 2px solid #782f40;
+    outline-offset: 5px;
   }
   .hub-section {
     padding-block: 35px 46px;
@@ -391,14 +444,10 @@
   }
   @media (min-width: 1500px) {
     .masthead {
-      padding-block: 40px 35px;
+      padding-block: 32px 29px;
     }
   }
   @media (max-width: 1100px) {
-    .doorway h2 {
-      font-size: 24px;
-    }
-    .doorway-grid,
     .product-grid {
       gap: 20px;
     }
@@ -409,7 +458,44 @@
       font-size: 35px;
     }
   }
+  @media (min-width: 701px) and (max-width: 1000px) {
+    .frontpage-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .news-grid {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+    .news-section {
+      grid-column: auto;
+    }
+    .news-story + .news-story {
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+    .news-story .story-link {
+      display: grid;
+      grid-template-columns: 96px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+    .news-story .frontpage-art {
+      aspect-ratio: 1;
+    }
+    .news-story .story-copy {
+      padding-top: 0;
+    }
+    .news-story h3 {
+      font-size: 22px;
+    }
+    .frontpage-heading h2 {
+      font-size: 25px;
+    }
+  }
   @media (max-width: 700px) {
+    .news-section {
+      grid-column: auto;
+    }
     .masthead {
       padding-block: 30px 27px;
     }
@@ -425,34 +511,22 @@
       max-width: 360px;
       margin-inline: auto !important;
     }
-    .doorway-grid,
+    .frontpage-grid,
     .product-grid {
       grid-template-columns: 1fr;
       gap: 29px;
     }
-    .doorway-art {
-      aspect-ratio: 3 / 2;
+    .frontpage-heading {
+      margin-bottom: 16px;
     }
-    .doorway-copy {
-      padding-top: 16px;
+    .story-copy h3 {
+      font-size: 23px;
     }
-    .doorway h2 {
-      font-size: 29px;
+    .featured-product h3 {
+      font-size: 30px;
     }
-    .doorway-action {
-      padding-top: 12px;
-    }
-    .directory-caption {
-      margin-top: 24px;
-      align-items: flex-start;
-      font-size: 10px;
-    }
-    .directory-caption > span:first-child {
-      max-width: 130px;
-    }
-    .directory-caption > span:last-child {
-      max-width: 140px;
-      text-align: right;
+    .news-grid {
+      gap: 20px;
     }
     .hub-section {
       padding-block: 30px 34px;
@@ -488,8 +562,32 @@
     h1 {
       font-size: 31px;
     }
-    .doorway h2 {
-      font-size: 26px;
+  }
+  @media (max-width: 500px) {
+    .news-grid {
+      grid-template-columns: 1fr;
+    }
+    .news-story + .news-story {
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+    .news-story .story-link {
+      display: grid;
+      grid-template-columns: 88px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+    .news-story .frontpage-art {
+      aspect-ratio: 1;
+    }
+    .news-story .story-copy {
+      padding-top: 0;
+    }
+    .news-story h3 {
+      font-size: 21px;
+    }
+    .news-story .story-action {
+      padding-top: 10px;
     }
   }
 </style>

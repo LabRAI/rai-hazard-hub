@@ -5,6 +5,7 @@
     ArrowUpRightFromSquareOutline,
   } from "flowbite-svelte-icons";
   import { withBase } from "$lib/paths";
+  import { scienceTitle } from "$lib/science/content";
   import { page } from "$app/state";
   import rai from "$lib/assets/favicon.png";
   let { active = "hubs" }: { active?: "hubs" | "team" | "about" } = $props();
@@ -74,7 +75,7 @@
     <a
       class="lab-brand"
       href={withBase("/science/")}
-      aria-label="Super Intelligence for Science Research Hub home"
+      aria-label={`${scienceTitle} home`}
     >
       <img src={rai} alt="RAI" width="59" height="34" /><span
         >AI for Science</span
