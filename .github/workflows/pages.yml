@@ -36,6 +36,9 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: Check types and science content
+        run: npm run check && npm run test:science
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

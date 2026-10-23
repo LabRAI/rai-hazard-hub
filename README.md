@@ -9,6 +9,16 @@ Live URL:
 - `/` portal
 - `/research-notes/` research notes
 - `/hipergator-rai-resources/` RAI Lab HiPerGator access guide
+- `/science/` independent AI-for-Science portal preview
+- `/science/team/` folder-driven team directory and member profiles
+- `/science/research-notes/` approved articles within the science navigation
+
+The original Hazard homepage and Research Notes are unchanged. The new version
+is titled **Super Intelligence for Science Research Hub** and adapts FSU's
+official Strata 3.3.15 header/footer template. See
+[`docs/SCIENCE_PORTAL.md`](docs/SCIENCE_PORTAL.md) for content, team-photo,
+video, source, deployment, and rollback instructions. The preview is marked
+`noindex,follow` until the lab approves it for public indexing.
 
 ## Local dev
 

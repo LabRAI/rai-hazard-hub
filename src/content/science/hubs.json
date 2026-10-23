@@ -1,0 +1,71 @@
+[
+  {
+    "id": "hazard",
+    "name": "Hazard Intelligence Hub",
+    "eyebrow": "Earth, environment & resilience",
+    "description": "Connecting environmental observations, predictive models, and open tools to understand a changing world.",
+    "filmTitle": "From environmental signals to wildfire forecasts.",
+    "filmDescription": "Explore the research behind FireEye and our open tools for hazard science.",
+    "youtubeUrl": null,
+    "platformUrl": "/",
+    "products": [
+      {
+        "title": "Research Notes",
+        "kind": "Read the research",
+        "description": "The questions, data, and findings behind our wildfire studies.",
+        "href": "/science/research-notes/",
+        "image": "notes",
+        "action": "Explore the studies"
+      },
+      {
+        "title": "RAI FireEye",
+        "kind": "Forecasting platform",
+        "description": "Explore 12-48 hour wildfire risk forecasts alongside environmental data.",
+        "href": "https://rai-fire.com/",
+        "image": "fireeye",
+        "action": "Open FireEye"
+      },
+      {
+        "title": "PyHazards",
+        "kind": "Open-source library",
+        "description": "Datasets, models, benchmarks, and workflows for hazard research.",
+        "href": "https://labrai.github.io/PyHazards/",
+        "image": "library",
+        "action": "Explore the library"
+      }
+    ]
+  },
+  {
+    "id": "health",
+    "name": "Health Intelligence Hub",
+    "eyebrow": "Health, evidence & discovery",
+    "description": "Bringing AI research into conversation with clinical evidence, neuroscience, and human health.",
+    "filmTitle": "Connecting evidence. Advancing health research.",
+    "filmDescription": "Discover our work on epilepsy reasoning and learning from EEG data.",
+    "youtubeUrl": null,
+    "platformUrl": null,
+    "products": [
+      {
+        "title": "Research Notes",
+        "kind": "Health research",
+        "description": "Perspectives on the questions and evidence behind our health research.",
+        "href": null,
+        "action": "Notes forthcoming"
+      },
+      {
+        "title": "Health Platform",
+        "kind": "Research platform",
+        "description": "A dedicated destination for the lab's health intelligence work.",
+        "href": null,
+        "action": "Details forthcoming"
+      },
+      {
+        "title": "EpiGraph",
+        "kind": "Open research",
+        "description": "A knowledge graph and benchmark for evidence-intensive epilepsy reasoning.",
+        "href": "https://labrai.github.io/EpiGraph/",
+        "action": "Explore EpiGraph"
+      }
+    ]
+  }
+]

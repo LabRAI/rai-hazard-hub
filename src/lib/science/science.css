@@ -1,0 +1,66 @@
+.science-site {
+  --accent: #782f40;
+  --ink: #272c2b;
+  --muted: #606864;
+  --line: #dce1dd;
+  --wash: #f3f5f3;
+}
+.science-width {
+  width: min(1320px, calc(100% - 80px));
+  margin-inline: auto;
+}
+.science-site h1,
+.science-site h2,
+.science-site h3 {
+  overflow-wrap: break-word;
+}
+.science-site section[id] {
+  scroll-margin-top: 24px;
+}
+.science-site .section-kicker {
+  font-size: 11px;
+  font-weight: 650;
+  color: #782f40;
+  text-transform: uppercase;
+}
+.science-site .editorial-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+.science-site .editorial-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 550;
+  color: #782f40;
+}
+.science-site .editorial-link svg {
+  width: 15px;
+  height: 15px;
+}
+.science-site .editorial-link:hover {
+  text-decoration: underline;
+}
+.science-site .research-site .study-index a > span,
+.science-site .research-site .paper-id {
+  color: #58635d;
+}
+@media (max-width: 700px) {
+  .science-width {
+    width: calc(100% - 40px);
+  }
+}
+@media print {
+  .science-site header,
+  .science-site footer,
+  .science-site button {
+    display: none;
+  }
+  .science-site {
+    color: black;
+  }
+  .science-width {
+    width: 100%;
+  }
+}

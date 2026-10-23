@@ -8,6 +8,10 @@
   } from "flowbite-svelte-icons";
   import SiteHeader from "$lib/components/SiteHeader.svelte";
   import SiteFooter from "$lib/components/SiteFooter.svelte";
+  import ScienceHeader from "$lib/components/science/ScienceHeader.svelte";
+  import ScienceFooter from "$lib/components/science/ScienceFooter.svelte";
+
+  let { science = false }: { science?: boolean } = $props();
   import wildfireFm from "$lib/assets/editorial/wildfire-fm-card.webp";
   import wildfireFmMatching from "$lib/assets/editorial/wildfire-fm-matching.webp";
   import wildfireIa from "$lib/assets/editorial/wildfire-ia-card.webp";
@@ -98,7 +102,11 @@
 </script>
 
 <svelte:head>
-  <title>Research Notes | RAI Hazard Intelligence</title>
+  <title
+    >Research Notes | {science
+      ? "AI for Science"
+      : "RAI Hazard Intelligence"}</title
+  >
   <meta
     name="description"
     content="A closer look at RAI wildfire research: what the studies ask, what they find, and why it matters. Read the papers and explore the accompanying resources."
@@ -106,7 +114,7 @@
 </svelte:head>
 
 <div class="hub-site research-site">
-  <SiteHeader active="research" />
+  {#if science}<ScienceHeader />{:else}<SiteHeader active="research" />{/if}
   <main id="main-content">
     <section class="notes-intro site-width" aria-labelledby="notes-title">
       <div class="notes-masthead">
@@ -257,7 +265,7 @@
       </div>
     </section>
   </main>
-  <SiteFooter />
+  {#if science}<ScienceFooter />{:else}<SiteFooter />{/if}
 
   <dialog
     bind:this={figureDialog}
