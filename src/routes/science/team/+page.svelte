@@ -99,9 +99,8 @@
     overflow: hidden;
   }
   .portrait span {
-    font:
-      32px/1 Georgia,
-      serif;
+    font-size: 32px;
+    line-height: 1;
     color: #782f40;
   }
   .portrait img {
@@ -113,9 +112,8 @@
     min-width: 0;
   }
   h2 {
-    font:
-      24px/1.2 Georgia,
-      serif;
+    font-size: 24px;
+    line-height: 1.2;
   }
   .person-copy p {
     font-size: 11px;

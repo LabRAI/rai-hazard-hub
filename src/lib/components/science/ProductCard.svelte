@@ -77,9 +77,8 @@
     margin-bottom: 5px !important;
   }
   h3 {
-    font:
-      27px/1.25 Georgia,
-      serif;
+    font-size: 27px;
+    line-height: 1.25;
   }
   .product-description {
     font-size: 13px;

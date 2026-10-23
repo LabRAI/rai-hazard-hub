@@ -3,11 +3,11 @@
     BarsOutline,
     CloseOutline,
     ArrowUpRightFromSquareOutline,
+    EnvelopeOutline,
   } from "flowbite-svelte-icons";
   import { withBase } from "$lib/paths";
   import { scienceTitle } from "$lib/science/content";
   import { page } from "$app/state";
-  import rai from "$lib/assets/favicon.png";
   let { active = "hubs" }: { active?: "hubs" | "team" | "about" } = $props();
   let menuOpen = $state(false);
   const selected = $derived(
@@ -54,8 +54,11 @@
         />
       </a>
       <div class="university-right">
-        <a class="department" href="https://www.cs.fsu.edu/"
-          >Department of Computer Science</a
+        <a
+          class="utility-link"
+          href="mailto:yushun.dong@fsu.edu"
+          aria-label="Contact the lab"
+          title="Contact the lab"><EnvelopeOutline /></a
         >
         <details class="university-menu">
           <summary
@@ -71,37 +74,43 @@
       </div>
     </div>
   </div>
-  <div class="science-width lab-nav">
+  <div class="identity-band">
     <a
-      class="lab-brand"
+      class="science-width site-brand"
       href={withBase("/science/")}
       aria-label={`${scienceTitle} home`}
     >
-      <img src={rai} alt="RAI" width="59" height="34" /><span
-        >AI for Science</span
-      >
+      {scienceTitle}
     </a>
-    <button
-      class="mobile-toggle"
-      type="button"
-      aria-label={menuOpen ? "Close navigation" : "Open navigation"}
-      aria-controls="science-navigation"
-      aria-expanded={menuOpen}
-      onclick={() => (menuOpen = !menuOpen)}
-    >
-      {#if menuOpen}<CloseOutline />{:else}<BarsOutline />{/if}
-    </button>
-    <nav id="science-navigation" class:open={menuOpen} aria-label="Science hub">
-      {#each links as link}<a
-          href={link.href}
-          aria-current={selected === link.id
-            ? link.id === "team"
-              ? "page"
-              : "location"
-            : undefined}
-          onclick={() => (menuOpen = false)}>{link.label}</a
-        >{/each}
-    </nav>
+  </div>
+  <div class="navigation-band">
+    <div class="science-width lab-nav">
+      <button
+        class="mobile-toggle"
+        type="button"
+        aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+        aria-controls="science-navigation"
+        aria-expanded={menuOpen}
+        onclick={() => (menuOpen = !menuOpen)}
+      >
+        {#if menuOpen}<CloseOutline />{:else}<BarsOutline />{/if}
+      </button>
+      <nav
+        id="science-navigation"
+        class:open={menuOpen}
+        aria-label="Science hub"
+      >
+        {#each links as link}<a
+            href={link.href}
+            aria-current={selected === link.id
+              ? link.id === "team"
+                ? "page"
+                : "location"
+              : undefined}
+            onclick={() => (menuOpen = false)}>{link.label}</a
+          >{/each}
+      </nav>
+    </div>
   </div>
 </header>
 
@@ -109,32 +118,43 @@
   .university-bar {
     background: #782f40;
     color: #fff;
-    border-bottom: 2px solid #ceb888;
   }
   .university-inner,
   .university-right,
-  .lab-nav,
-  .lab-brand {
+  .lab-nav {
     display: flex;
     align-items: center;
   }
   .university-inner {
     justify-content: space-between;
-    min-height: 66px;
+    min-height: 76px;
     gap: 20px;
   }
   .fsu-lockup {
     display: block;
-    width: 194px;
-    height: 53px;
+    width: 160px;
+    height: 44px;
     object-fit: contain;
   }
   .university-right {
-    gap: 24px;
+    gap: 10px;
   }
-  .department {
-    font-size: 12px;
+  .utility-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
     color: #fff;
+  }
+  .utility-link :global(svg),
+  summary :global(svg) {
+    width: 17px;
+    height: 17px;
+  }
+  .utility-link:hover,
+  summary:hover {
+    background: #602332;
   }
   .university-menu {
     position: relative;
@@ -144,7 +164,9 @@
     cursor: pointer;
     width: 40px;
     height: 40px;
-    padding: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     list-style: none;
   }
   summary::-webkit-details-marker {
@@ -176,50 +198,50 @@
     width: 13px;
     height: 13px;
   }
-  .lab-nav {
-    min-height: 77px;
-    justify-content: space-between;
-    gap: 24px;
-    border-bottom: 1px solid var(--line);
+  .identity-band {
+    background: #fff;
+    padding-block: 13px 12px;
   }
-  .lab-brand {
-    gap: 18px;
+  .site-brand {
+    display: block;
+    text-align: center;
     color: var(--ink);
+    font-size: 38px;
+    font-weight: 700;
+    font-stretch: 100%;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-wrap: balance;
   }
-  .lab-brand img {
-    object-fit: contain;
+  .navigation-band {
+    background: #fff;
+    border-block: 1px solid #eeeeed;
   }
-  .lab-brand span {
-    font-size: 14px;
-    font-weight: 600;
-    border-left: 1px solid var(--line);
-    padding-left: 18px;
+  .lab-nav {
+    min-height: 48px;
+    justify-content: center;
   }
   #science-navigation {
     display: flex;
-    gap: 32px;
+    justify-content: center;
+    gap: 3px;
     align-self: stretch;
   }
   #science-navigation a {
     display: flex;
     align-items: center;
     position: relative;
-    font-size: 13px;
-    font-weight: 550;
-    color: var(--muted);
+    padding: 14px 20px;
+    font-size: 13.6px;
+    font-weight: 500;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: var(--ink);
   }
   #science-navigation a:hover,
   #science-navigation a[aria-current] {
-    color: #782f40;
-  }
-  #science-navigation a[aria-current]::after {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    content: "";
-    height: 2px;
-    background: #782f40;
+    color: var(--ink);
+    background: #e8e8e8;
   }
   .mobile-toggle {
     display: none;
@@ -227,8 +249,7 @@
     height: 42px;
     padding: 9px;
     background: transparent;
-    border: 1px solid var(--line);
-    border-radius: 3px;
+    border: 0;
   }
   .skip-link {
     position: absolute;
@@ -242,33 +263,31 @@
   .skip-link:focus {
     top: 10px;
   }
+  @media (max-width: 1100px) {
+    .site-brand {
+      font-size: 30px;
+    }
+  }
   @media (max-width: 700px) {
     .university-inner {
       min-height: 58px;
     }
     .fsu-lockup {
-      width: 166px;
-      height: 46px;
+      width: 140px;
+      height: 39px;
     }
-    .department {
-      display: none;
+    .identity-band {
+      padding-block: 15px;
+    }
+    .site-brand {
+      font-size: 24px;
+      line-height: 1.3;
     }
     .lab-nav {
-      min-height: 68px;
+      min-height: 46px;
       flex-wrap: wrap;
+      justify-content: flex-end;
       gap: 0;
-    }
-    .lab-brand img {
-      width: 49px;
-      height: 30px;
-    }
-    .lab-brand,
-    .lab-brand span {
-      gap: 12px;
-      font-size: 13px;
-    }
-    .lab-brand span {
-      padding-left: 12px;
     }
     .mobile-toggle {
       display: inline-flex;
@@ -290,9 +309,6 @@
     }
     #science-navigation a[aria-current] {
       background: var(--wash);
-    }
-    #science-navigation a[aria-current]::after {
-      display: none;
     }
   }
 </style>

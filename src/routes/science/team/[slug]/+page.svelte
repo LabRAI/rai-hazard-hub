@@ -69,9 +69,8 @@
     object-fit: cover;
   }
   .portrait span {
-    font:
-      80px/1 Georgia,
-      serif;
+    font-size: 80px;
+    line-height: 1;
     color: #782f40;
   }
   h1 {

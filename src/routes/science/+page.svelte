@@ -30,9 +30,7 @@
 <main id="main-content">
   <section class="science-width masthead" aria-labelledby="science-title">
     <p class="section-kicker">Responsible AI Lab · Florida State University</p>
-    <h1 id="science-title" class="editorial-title">
-      Super Intelligence<br /><span>for Research Hub at FSU</span>
-    </h1>
+    <h1 id="science-title" class="sr-only">{scienceTitle}</h1>
     <p class="masthead-description">
       Research, platforms, and open tools for a world of scientific questions.
     </p>
@@ -207,19 +205,12 @@
 <style>
   .masthead {
     text-align: center;
-    padding-block: 30px 28px;
-  }
-  h1 {
-    font-size: 52px;
-    line-height: 1.1;
-    margin-block: 13px 16px !important;
-  }
-  h1 span {
-    color: #782f40;
+    padding-block: 23px 28px;
   }
   .masthead-description {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--muted);
+    margin-top: 6px !important;
   }
   .product-grid {
     display: grid;
@@ -320,7 +311,7 @@
   }
   .story-description {
     color: var(--muted);
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.7;
   }
   .story-action {
@@ -358,9 +349,9 @@
     margin-bottom: 20px;
   }
   .hub-index {
-    font:
-      17px/1 Georgia,
-      serif;
+    font-size: 17px;
+    line-height: 1;
+    font-weight: 500;
     color: #782f40;
   }
   .divider-line {
@@ -444,7 +435,7 @@
   }
   @media (min-width: 1500px) {
     .masthead {
-      padding-block: 32px 29px;
+      padding-block: 25px 30px;
     }
   }
   @media (max-width: 1100px) {
@@ -497,14 +488,10 @@
       grid-column: auto;
     }
     .masthead {
-      padding-block: 30px 27px;
+      padding-block: 20px 25px;
     }
     .masthead .section-kicker {
       font-size: 9px;
-    }
-    h1 {
-      font-size: 35px;
-      line-height: 1.12;
     }
     .masthead-description {
       font-size: 13px;
@@ -556,11 +543,6 @@
     }
     .about-section h2 {
       font-size: 33px;
-    }
-  }
-  @media (max-width: 380px) {
-    h1 {
-      font-size: 31px;
     }
   }
   @media (max-width: 500px) {

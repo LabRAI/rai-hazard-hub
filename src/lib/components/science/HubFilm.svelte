@@ -157,9 +157,8 @@
     width: calc(100% - 68px);
   }
   h3 {
-    font:
-      38px/1.15 Georgia,
-      serif;
+    font-size: 38px;
+    line-height: 1.15;
     text-wrap: balance;
   }
   p {

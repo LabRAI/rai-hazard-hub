@@ -72,9 +72,10 @@
     text-transform: uppercase;
   }
   .footer-title {
-    font:
-      30px/1.4 Georgia,
-      serif;
+    font-size: 30px;
+    line-height: 1.4;
+    font-stretch: 75%;
+    font-weight: 450;
     margin-block: 4px 6px;
   }
   .footer-copy {

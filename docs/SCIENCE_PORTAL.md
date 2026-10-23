@@ -101,6 +101,17 @@ product artwork keys are defined in `art`. Keep Research Notes first.
 
 ## Design basis and sources
 
+- Typography and the refined two-tier header follow
+  https://fda.fsu.edu/about-us. Computed styles use Open Sans: regular-width
+  body text, 75%-width section headings at weight 450, and a regular-width
+  bold uppercase site name. The university strip is garnet; the site identity
+  and centered navigation occupy the white band below.
+- Open Sans variable Latin and extended-Latin WOFF2 assets are self-hosted in
+  `src/lib/assets/fonts/`; no Google Fonts or Adobe request is made by this
+  implementation. The source is Google Fonts' Open Sans family, and its
+  `OpenSans-OFL.txt` license is included alongside the assets.
+- Typography is scoped to `/science/`, including its Research Notes and team
+  pages. The header no longer displays a RAI logo; the FSU mark is retained.
 - FSU web style guide: https://brand.fsu.edu/web
 - Downloaded official template: https://brand.fsu.edu/sites/g/files/upcbnu4656/files/brand/webstyle-code/strata-3.3.15.zip
 - Original source HTML is archived under `docs/reference/fsu-strata-3.3.15/`.
@@ -148,6 +159,8 @@ The Pages preview path is `https://labrai.github.io/rai-hazard-hub/science/`.
 Baseline tag: `hub-before-science-portal-2026-10-22` at `aebd1bb`.
 The science preview before the News/Trending revision is also preserved as
 `science-before-news-trending-c0aab89` at `c0aab89`.
+The version before the FDA typography/header revision is preserved as
+`science-before-fda-style-cfbf9b2` at `cfbf9b2`.
 The original site is preserved in place, so visitors can continue using it.
 Reverting the science-portal commit removes the added version; do not reset
 unrelated later work or alter the separately hosted FireEye server.
@@ -192,3 +205,18 @@ outside this change.
 - Browser checks cover the official title, dates, news anchors, FireEye link,
   navigation, responsive image alignment, and existing profile routes. Axe
   checks cover the revised homepage at 1440 and 390 px.
+
+### FDA typography and header revision
+
+- Open Sans is applied to the homepage, Research Notes, team directory, and
+  individual profiles, including navigation, controls, and footer text.
+- The visible site name now sits in the white identity band. The homepage
+  retains a screen-reader heading without repeating the visible title.
+- The RAI header image is removed. The garnet FSU strip retains its official
+  mark, contact link, and university menu; site navigation sits below the name.
+- Browser checks cover 320, 390, 700, 820, 1024, 1440, and 1920 px; they verify
+  computed font families, font loading, both navigation menus, artwork, links,
+  and no horizontal overflow. The video fixture still passes.
+- Axe checks pass for the homepage, team directory, and Research Notes at
+  desktop and mobile widths. Screenshots are archived under
+  `/home/shared/Hub_page/science-preview-2026-10-22/fda-style/`.
